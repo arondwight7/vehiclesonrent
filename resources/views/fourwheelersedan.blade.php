@@ -5,14 +5,20 @@
         <div id="main-content">
           <div class="crumbs">
             <ul>
-              <li><a href="{{ url('/twowheelers') }}">sedans</a></li>
+              <li><a href="{{ url('/twowheelers') }}">Hatchbacks</a></li>
               <li><a href="{{ url('/fourwheelersedan') }}">Sedans</a></li>
               <li><a href="{{ url('/fourwheelersuv') }}">SUVs</a></li></ul>
+             <div class="price pull-right">
              <ul>
               <li><a href="{{ route('sedan.bookingCart') }}">Proceed</a></li><span class="badge">{{Session::has('vehicl') ? Session::get('vehicl')->totalQty : '' }}</span>
             </ul>
           </div>
-          
+          </div>
+          @if(Session::has('flash_message'))
+                  <div class="alert alert-success">
+                      {{ Session::get('flash_message') }}
+                  </div>
+                @endif
           
         </div>
       </div>
@@ -28,9 +34,13 @@
           <div class="description"><p>Fuel : {{$sedan->fuel}}</p>
         </div>
         <div class="description"><p>Seaters : {{$sedan->seats}}</p></div>
+        @can('attach')
+                <p id="available">Availability : {{$sedan->availability}}</p>
+            @endcan
         <div class="clearfix">
-          <div class="price pull-left">{{$sedan->price}}/day</div>
-          <p><a href="{{ route('sedan.bookasedan', ['id' => $sedan->id]) }}" class="btn btn-info pull-right" role="button">Book</a> </p>
+          <div class="price pull-left">{{$sedan->price}} / 8 hours</div>
+          <h5>Excess 200/hour</h5>
+          <p><a href="{{ route('sedan.bookasedan', ['id' => $sedan->id]) }}" class="btn btn-info pull-right" role="button">Select this one</a> </p>
         </div>
         
       </div>

@@ -38,9 +38,10 @@
 			<div id='cssmenu' >
 				<ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('/twowheelers') }}">Four Wheelers</a></li>
+                    <li><a href="{{ url('/fourwheelersedan') }}">Four Wheelers</a></li>
                     <li><a href="{{ url('/twowheelergear') }}">Two Wheelers</a></li>
 					<li><a href="{{ url('/about') }}">About Us</a></li>
+					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
                    <li> @can('attach')
@@ -56,7 +57,8 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logot') }}"><i class="fa fa-book fa-fw"></i>&nbsp;My Policy</a></li>
+                                <li><a href="{{ url('/orders') }}"><i class="fa fa-book fa-fw"></i>&nbsp;My Orders</a></li>
+                                
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>&nbsp;Logout</a></li>
                             </ul>
                         </li>
@@ -80,8 +82,8 @@
 				<div class="zerogrid wrapper">
 					Copyright &copy; VehiclesOnRent 2015 - 2017
 					<ul class="quick-link">
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="#">Terms of Use</a></li>
+						
+						<li><a href="{{ url('/terms') }}">Privacy Policy & Terms of Use</a></li>
 						
 					</ul>
 				</div>

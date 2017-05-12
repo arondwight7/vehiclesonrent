@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHatchbacksTable extends Migration
+class CreateHatchbackcarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -21,6 +21,7 @@ class CreateHatchbacksTable extends Migration
             $table->string('fuel');
             $table->string('seats');
             $table->string('price');
+            $table->integer('availability');
         });
     }
 

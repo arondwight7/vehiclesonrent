@@ -1,4 +1,4 @@
-@extends('layouts.def')
+@extends('layouts.deff')
 
 @section('content')
 	@if(Session::has('success'))

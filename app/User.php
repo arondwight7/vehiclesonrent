@@ -44,4 +44,8 @@ class User extends Authenticatable
         }
         return !! $role->intersect($this->roles)->count();
     }
+
+    public function orders(){
+        return $this->hasMany('App\Order');   
+    }
 }

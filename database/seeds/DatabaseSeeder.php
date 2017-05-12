@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         //$this->call(hatchbackTableSeeder::class);
-        $this->call(gearTableSeeder::class);
+        $this->call(priceTableSeeder::class);
+        
     }
 }

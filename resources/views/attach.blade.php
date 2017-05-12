@@ -1,4 +1,4 @@
-@extends('layouts.def')
+@extends('layouts.deff')
 
 @section('content')
 <div class="container">
@@ -38,17 +38,17 @@
                                             <label class="row">
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" name="vregno" id="name" placeholder="Enter Vehicle Register number" required="required" maxlength="11" />
+                                                        <input type="text" name="vregno" id="name" placeholder="Enter Vehicle Register number" required="required" maxlength="10" />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" name="vname" id="name" placeholder="Enter Vehicle name" required="required"  "/>
+                                                        <input type="text" name="vname" id="name" placeholder="Enter Vehicle name" required="required" pattern="[A-Za-z]+$"/>
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input list="vehicles" name="vtype" placeholder="Vehicle Type">
+                                                        <input list="vehicles" name="vtype" placeholder="Vehicle Type" required="required" >
                                                           <datalist id="vehicles">
                                                             <option value="Two Wheelers">
                                                             <option value="Four Wheelers">
@@ -58,17 +58,17 @@
                                                 </div>
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" name="vmake" id="name" placeholder="Year Of Make" required="required" maxlength="4" />
+                                                        <input type="text" name="vmake" id="name" placeholder="Year Of Make" required="required" maxlength="4" pattern="[1-2]{1}[0-9]{3}" />
                                                     </div>
                                                 </div></br>
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" name="vcc" id="name" placeholder="Displacement" required="required" maxlength="4" />
+                                                        <input type="text" name="vcc" id="name" placeholder="Displacement" required="required" maxlength="4"  pattern="[1-2]{1}[0-9]{3}"/>
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input list="vehiclescat" name="vcat" placeholder="Vehicle Category">
+                                                        <input list="vehiclescat" name="vcat" placeholder="Vehicle Category" required="required">
                                                           <datalist id="vehiclescat">
                                                             <option value="Two Wheelers">
                                                                 <option value="Mopeds">

@@ -17,6 +17,7 @@ class gearTableSeeder extends Seeder
         	'transmission' => 'Automatic',
         	'seats' => 'two',
         	'price' => '1340',
+            'availability' => '4'
 
         	]);
         $gear->save();
@@ -27,7 +28,7 @@ class gearTableSeeder extends Seeder
         	'transmission' => 'Gear',
         	'seats' => 'two',
         	'price' => '1680',
-
+            'availability' => '3'
         	]);
         $gear->save();
 
@@ -37,7 +38,7 @@ class gearTableSeeder extends Seeder
         	'transmission' => 'Gear',
         	'seats' => 'two',
         	'price' => '1680',
-
+            'availability' => '2'
         	]);
         $gear->save();
 
@@ -47,7 +48,7 @@ class gearTableSeeder extends Seeder
         	'transmission' => 'Automatic',
         	'seats' => 'two',
         	'price' => '1340',
-
+            'availability' => '2'
         	]);
         $gear->save();
 
@@ -58,7 +59,7 @@ class gearTableSeeder extends Seeder
         	'transmission' => 'Automatic',
         	'seats' => 'two',
         	'price' => '1340',
-
+            'availability' => '3'
         	]);
         $gear->save();
 
@@ -68,7 +69,7 @@ class gearTableSeeder extends Seeder
         	'transmission' => 'Gear',
         	'seats' => 'two',
         	'price' => '1680',
-
+            'availability' => '4'
         	]);
         $gear->save();
 
@@ -78,7 +79,7 @@ class gearTableSeeder extends Seeder
         	'transmission' => 'Gear',
         	'seats' => 'two',
         	'price' => '1680',
-
+            'availability' => '3'
         	]);
         $gear->save();
 
@@ -88,7 +89,7 @@ class gearTableSeeder extends Seeder
         	'transmission' => 'Automatic',
         	'seats' => 'two',
         	'price' => '1340',
-
+            'availability' => '2'
         	]);
         $gear->save();
 

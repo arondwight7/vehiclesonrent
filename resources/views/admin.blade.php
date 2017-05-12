@@ -15,13 +15,14 @@
                         <li><a href="{{ url('/admin') }}">Admin Home</a></li>
                         <li><a href="#">Attach vehicles</a></li>
                         <li><a href="#">Owner Form</a></li>
+                        <li><a href="{{ url('/settlepayment') }}">Settle Payment</a></li>
                     </ul>
                 </div>
                     </ul>
                 </div>
                     
                             
-                               <div class="zerogrid">
+                <div class="zerogrid">
                     <div class="row">
                         <h1 class="t-center" style="margin: 40px 0;color: #212121;letter-spacing: 2px;font-weight: 500;">Attach Panel</h1>
                         
@@ -38,7 +39,7 @@
                                             <label class="row">
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" name="name" id="name" placeholder="Enter name" required="required" />
+                                                        <input type="text" name="name" id="name" placeholder="Enter name" required="required" pattern="[A-Za-z]+$" />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
@@ -48,7 +49,7 @@
                                                 </div>
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" name="phone" id="name" placeholder="Enter Phone Number" required="required" pattern="[0-9]{10}" />
+                                                        <input type="text" name="phone" id="name" placeholder="Enter Phone Number" pattern="[7-9]{1}[0-9]{9}" required="required"  />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
@@ -63,7 +64,7 @@
                                                 </div>
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" name="city" id="email" placeholder="Enter City" required="required"  />
+                                                        <input type="text" name="city" id="email" placeholder="Enter City" required="required" pattern="[A-Za-z]+$" />
                                                     </div>
                                                 </div>
                                             </label>

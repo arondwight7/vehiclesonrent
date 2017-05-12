@@ -18,7 +18,7 @@ class suvTableSeeder extends Seeder
         	'fuel' => 'Diesel',
         	'seats' => 'Eight',
         	'price' => '2630',
-
+            'availability' => '3'
         	]);
         $suv->save();
 
@@ -29,7 +29,7 @@ class suvTableSeeder extends Seeder
         	'fuel' => 'Diesel',
         	'seats' => 'Eight',
         	'price' => '2630',
-
+            'availability' => '2'
         	]);
         $suv->save();
 
@@ -40,7 +40,7 @@ class suvTableSeeder extends Seeder
         	'fuel' => 'Petrol',
         	'seats' => 'Eight',
         	'price' => '2630',
-
+            'availability' => '2'
         	]);
         $suv->save();
 
@@ -51,7 +51,7 @@ class suvTableSeeder extends Seeder
         	'fuel' => 'Petrol',
         	'seats' => 'Eight',
         	'price' => '2630',
-
+            'availability' => '3'
         	]);
         $suv->save();
 

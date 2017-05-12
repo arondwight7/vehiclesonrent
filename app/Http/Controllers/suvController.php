@@ -8,6 +8,8 @@ use App\Vehicl1;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Session;
+use App\Order;
+use Auth;
 
 class suvController extends Controller
 {
@@ -25,10 +27,15 @@ class suvController extends Controller
    public function getbookasuv(Request $request, $id)
    {
    		$suv = \App\suv::find($id);
+      if($suv->availability <= 0)
+      {
+        return back()->with('flash_message', 'Oops! Selected car not avaialable for this time slot. Try our other variants');
+      }
+      else
    		$oldVehicl1 = Session::has('vehicl1') ? Session::get('vehicl1') : null;
    		$vehicl1 = new Vehicl1($oldVehicl1);
    		$vehicl1->add($suv, $suv->id);
-
+       $suv = suv::find($id)->decrement('availability');
    		$request->session()->put('vehicl1', $vehicl1);
       //dd($request->session()->get('vehicl'));
    		return redirect()->route('fourwheelersuv');
@@ -64,12 +71,18 @@ class suvController extends Controller
     
     Stripe::setApiKey('sk_test_H8qhYgBFnyVUdMyncOOeXPlK');
     try{ $total = 30000;
-      Charge::create(array(
+      $charge = Charge::create(array(
       "amount" => 30000 * 100,
       "currency" => "usd",
-      "source" => "tok_1AGC7KJKrtHUdksMrPd9UP3x", // obtained with Stripe.js
+      "source" => "tok_1AH9OGJKrtHUdksM3fcVSBI9", // obtained with Stripe.js
       "description" => "Booking a SUV car"
     ));
+      $order = new Order();
+      $order->vehicl = serialize($vehicl1);
+      //$order->name = $request->input('name');
+      $order->payment_id = $charge->id;
+
+      Auth::user()->orders()->save($order);
     } catch (\Exception $e){
       return redirect()->route('checkout3')->with('error', $e->getMessage());
 

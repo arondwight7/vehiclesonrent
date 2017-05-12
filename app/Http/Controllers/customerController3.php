@@ -20,10 +20,11 @@ class customerController3 extends Controller
       $ins->email = Input::get('email');  
       $ins->phoneno = Input::get('phone');
       $ins->address = Input::get('address');
+      $ins->vehicletaken = Input::get('vehicletaken');
       $ins->dl = Input::get('dl');
       $ins->exp = Input::get('exp');
       $ins->pick = Input::get('pick');
-      $ins->drop = Input::get('drop');
+      $ins->picktime = Input::get('picktime');
       $ins->save();
       return view('payment3');
     }

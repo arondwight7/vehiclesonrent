@@ -51,32 +51,58 @@ Route::post('/payment1', 'customerController1@insert');
 Route::post('/payment2', 'customerController2@insert');
 Route::post('/payment3', 'customerController3@insert');
 
+Route::get('/orders', 'PagesController@orders');
+
+Route::get('/terms', 'PagesController@terms');
+
+Route::get('/feedback', 'PagesController@feedback');
+
+Route::get('/feedsuccess', 'PagesController@feedsuuccess');
+
+Route::get('/settlepayment2/{id}', 'settleController@settlepayment2');
+Route::get('/settlepayment', 'settleController@viewsettle'); 
+
+Route::get('/adminavail', 'availableController@suv');
+
+Route::post('/feedsuccess', 'feedbackController@insert');
+
+Route::get('/orders', [
+	'uses' => 'sedanController@getProfile',
+	'as' => 'orders',
+	'middleware' => 'auth'
+	]);
 
 Route::get('/checkout2', [
 	'uses' => 'sedanController@getcheckout',
-	'as' => 'checkout2'
+	'as' => 'checkout2',
+	'middleware' => 'auth'
 	]);
 Route::get('/checkout3', [
 	'uses' => 'suvController@getcheckout',
-	'as' => 'checkout3'
+	'as' => 'checkout3',
+	'middleware' => 'auth'
 	]);
 Route::get('/checkout4', [
 	'uses' => 'hatchbackController@getcheckout',
-	'as' => 'checkout4'
+	'as' => 'checkout4',
+	'middleware' => 'auth'
 	]);
 Route::get('/checkout5', [
 	'uses' => 'gearController@getcheckout',
-	'as' => 'checkout5'
+	'as' => 'checkout5',
+	'middleware' => 'auth'
 	]);
 
 Route::post('/acknowledge', [
 	'uses' => 'sedanController@postcheckout',
-	'as' => 'acknowledge'
+	'as' => 'acknowledge',
+	'middleware' => 'auth'
 	]);
 
 Route::post('/acknowledge1', [
 	'uses' => 'suvController@postcheckout',
-	'as' => 'acknowledge1'
+	'as' => 'acknowledge1',
+	'middleware' => 'auth'
 	]);
 
 Route::post('/acknowledge2', [
@@ -86,7 +112,8 @@ Route::post('/acknowledge2', [
 
 Route::post('/acknowledge3', [
 	'uses' => 'gearController@postcheckout',
-	'as' => 'acknowledge3'
+	'as' => 'acknowledge3',
+	'middleware' => 'auth'
 	]);
 
 
@@ -96,67 +123,80 @@ Route::get('/attach', 'PagesController@attach');
 
 Route::get('/twowheelergear', [
 	'uses' => 'gearController@getgear',
-	'as' => 'twowheelergear'
+	'as' => 'twowheelergear',
+	'middleware' => 'auth'
 	]);
 
 Route::get('/twowheelermoped', [
 	'uses' => 'mopedController@getmoped',
-	'as' => 'twowheelermoped'
+	'as' => 'twowheelermoped',
+	'middleware' => 'auth'
 	]);
 
 Route::get('/twowheelers', [
 	'uses' => 'hatchbackController@gethatchback',
-	'as' => 'twowheelers'
+	'as' => 'twowheelers',
+	'middleware' => 'auth'
 	]);
 
 Route::get('/fourwheelersedan', [
 	'uses' => 'sedanController@getsedan',
-	'as' => 'fourwheelersedan'
+	'as' => 'fourwheelersedan',
+	'middleware' => 'auth'
 	]);
 
 Route::get('/fourwheelersuv', [
 	'uses' => 'suvController@getsuv',
-	'as' => 'fourwheelersuv'
+	'as' => 'fourwheelersuv',
+	'middleware' => 'auth'
 	]);
 Route::get('/book-a-sedan/{id}', [
 	'uses' =>'sedanController@getbookasedan',
-	'as' => 'sedan.bookasedan'
+	'as' => 'sedan.bookasedan',
+	'middleware' => 'auth'
 	]);
 
 Route::get('/booking-cart', [
 	'uses' =>'sedanController@getCart',
-	'as' => 'sedan.bookingCart'
+	'as' => 'sedan.bookingCart',
+	'middleware' => 'auth'
 	]);
 //Route::get('/deletesedan/{id}','sedanController@deletecat');
 
 Route::get('/book-a-suv/{id}', [
 	'uses' =>'suvController@getbookasuv',
-	'as' => 'sedan.bookasuv'
+	'as' => 'sedan.bookasuv',
+	'middleware' => 'auth'
 	]);
 
 Route::get('/booking-suvcart', [
 	'uses' =>'suvController@getsuvCart',
-	'as' => 'suv.bookingCart'
+	'as' => 'suv.bookingCart',
+	'middleware' => 'auth'
 	]);
 
 Route::get('/book-a-hatchback/{id}', [
 	'uses' =>'hatchbackController@getbookahatchback',
-	'as' => 'sedan.bookahatchback'
+	'as' => 'sedan.bookahatchback',
+	'middleware' => 'auth'
 	]);
 
 Route::get('/booking-hatchbackcart', [
 	'uses' =>'hatchbackController@gethatchbackCart',
-	'as' => 'hatchback.bookingCart'
+	'as' => 'hatchback.bookingCart',
+	'middleware' => 'auth'
 	]);
 
 Route::get('/book-a-gear/{id}', [
 	'uses' =>'gearController@getbookagear',
-	'as' => 'sedan.bookagear'
+	'as' => 'sedan.bookagear',
+	'middleware' => 'auth'
 	]);
 
 Route::get('/booking-gearcart', [
 	'uses' =>'gearController@getgearCart',
-	'as' => 'gear.bookingCart'
+	'as' => 'gear.bookingCart',
+	'middleware' => 'auth'
 	]);
 
 

@@ -142,6 +142,47 @@ public function twowheelergear()
 		return view('acknowledge3');
 	}
 
+	public function orders()
+	{
+		
+		return view('orders');
+	}
+
+	public function terms()
+	{
+		
+		return view('terms');
+	}
+	public function feedback()
+	{
+		
+		return view('feedback');
+	}
+
+	public function feedsuccess()
+	{
+		
+		return view('feedsuccess');
+	}
+
+	public function settlepayment()
+	{
+		
+		return view('settlepayment');
+	}
+	
+	public function settlepayment2()
+	{
+		
+		return view('settlepayment2/{id}');
+	}
+
+	public function adminavail()
+	{
+		
+		return view('adminavail');
+	}
+
 	
 
 }

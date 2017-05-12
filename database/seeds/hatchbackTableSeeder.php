@@ -18,6 +18,7 @@ class hatchbackTableSeeder extends Seeder
         	'fuel' => 'Diesel',
         	'seats' => 'Four',
         	'price' => '1250',
+            'availability' => '4'
 
         	]);
         $hatchback->save();
@@ -29,7 +30,7 @@ class hatchbackTableSeeder extends Seeder
         	'fuel' => 'Diesel',
         	'seats' => 'Four',
         	'price' => '1250',
-
+            'availability' => '4'
         	]);
         $hatchback->save();
 
@@ -40,18 +41,18 @@ class hatchbackTableSeeder extends Seeder
         	'fuel' => 'Petrol',
         	'seats' => 'Four',
         	'price' => '1250',
-
+            'availability' => '2'
         	]);
         $hatchback->save();
 
         $hatchback= new \App\hatchback([
-        	'imagepath' => 'images/swift.png',
+        	'imagepath' => 'images/i10.png',
         	'vehiclename' => 'Hyundai i10',
         	'transmission' => 'Automatic',
         	'fuel' => 'Petrol',
         	'seats' => 'Four',
         	'price' => '1250',
-
+            'availability' => '3'
         	]);
         $hatchback->save();
     }

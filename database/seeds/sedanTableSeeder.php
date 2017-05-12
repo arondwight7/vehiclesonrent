@@ -18,7 +18,7 @@ class sedanTableSeeder extends Seeder
         	'fuel' => 'Diesel',
         	'seats' => 'Five',
         	'price' => '1870',
-
+            'availability' => '4'
         	]);
         $sedan->save();
 
@@ -29,7 +29,7 @@ class sedanTableSeeder extends Seeder
         	'fuel' => 'Diesel',
         	'seats' => 'Five',
         	'price' => '1870',
-
+            'availability' => '2'
         	]);
         $sedan->save();
 
@@ -40,7 +40,7 @@ class sedanTableSeeder extends Seeder
         	'fuel' => 'Petrol',
         	'seats' => 'Five',
         	'price' => '1870',
-
+            'availability' => '4'
         	]);
         $sedan->save();
 
@@ -51,7 +51,7 @@ class sedanTableSeeder extends Seeder
         	'fuel' => 'Petrol',
         	'seats' => 'Five',
         	'price' => '1870',
-
+            'availability' => '3'
         	]);
         $sedan->save();
 

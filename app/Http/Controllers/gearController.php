@@ -8,7 +8,8 @@ use App\Vehicl3;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Session;
-
+use App\Order;
+use Auth;
 class gearController extends Controller
 {
     public function __construct()
@@ -25,10 +26,15 @@ class gearController extends Controller
    public function getbookagear(Request $request, $id)
    {
    		$gear = \App\gear::find($id);
+      if($gear->availability <= 0)
+      {
+        return back()->with('flash_message', 'Oops! Selected car not avaialable for this time slot. Try our other variants');
+      }
+      else
    		$oldVehicl3 = Session::has('vehicl3') ? Session::get('vehicl3') : null;
    		$vehicl3 = new Vehicl3($oldVehicl3);
    		$vehicl3->add($gear, $gear->id);
-
+       $gear = gear::find($id)->decrement('availability');
    		$request->session()->put('vehicl3', $vehicl3);
       //dd($request->session()->get('vehicl3'));
    		return redirect()->route('twowheelergear');
@@ -64,12 +70,18 @@ class gearController extends Controller
     
     Stripe::setApiKey('sk_test_H8qhYgBFnyVUdMyncOOeXPlK');
     try{ $total = 5000;
-      Charge::create(array(
+      $charge = Charge::create(array(
       "amount" => 5000 * 100,
       "currency" => "usd",
       "source" => "tok_1AGCAOJKrtHUdksMGqyGlMhH", // obtained with Stripe.js
-      "description" => "Booking a Hatchback Car"
+      "description" => "Booking a bike"
     ));
+      $order = new Order();
+      $order->vehicl = serialize($vehicl3);
+      //$order->name = $request->input('name');
+      $order->payment_id = $charge->id;
+
+      Auth::user()->orders()->save($order);
     } catch (\Exception $e){
       return redirect()->route('checkout5')->with('error', $e->getMessage());
 

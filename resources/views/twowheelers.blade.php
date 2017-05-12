@@ -1,6 +1,7 @@
 @extends('layouts.def')
 
 @section('content')
+
 <div class="wrap-container clearfix">
         <div id="main-content">
           <div class="crumbs">
@@ -8,10 +9,18 @@
               <li><a href="{{ url('/twowheelers') }}">Hatchbacks</a></li>
               <li><a href="{{ url('/fourwheelersedan') }}">Sedans</a></li>
               <li><a href="{{ url('/fourwheelersuv') }}">SUVs</a></li>
+              
+            </ul>
+            <div class="price pull-right">
+             <ul>
               <li><a href="{{ route('hatchback.bookingCart') }}">Proceed</a></li><span class="badge">{{Session::has('vehicl2') ? Session::get('vehicl2')->totalQty : '' }}</span>
             </ul>
           </div>
-          
+          @if(Session::has('flash_message'))
+                  <div class="alert alert-success">
+                      {{ Session::get('flash_message') }}
+                  </div>
+                @endif
           
         </div>
       </div>
@@ -28,8 +37,15 @@
         </div>
         <div class="description"><p>Seaters : {{$hatchback->seats}}</p></div>
         <div class="clearfix">
-          <div class="price pull-left">{{$hatchback->price}}/day</div>
-          <p><a href="{{ route('sedan.bookahatchback', ['id' => $hatchback->id]) }}" class="btn btn-info pull-right" role="button">Book</a> </p>
+          @can('attach')
+                <p id="available">Availability : {{$hatchback->availability}}</p>
+            @endcan
+           
+         
+          
+          <div class="price pull-left">{{$hatchback->price}} / 8 hours</div>
+          <h5>Excess 150/hour</h5>
+          <p><a href="{{ route('sedan.bookahatchback', ['id' => $hatchback->id]) }}" class="btn btn-info pull-right" role="button" onc>Select this one</a> </p>
         </div>
         
       </div>

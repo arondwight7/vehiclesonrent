@@ -35,7 +35,7 @@ class hatchbackController extends Controller
    		$oldVehicl2 = Session::has('vehicl2') ? Session::get('vehicl2') : null;
    		$vehicl2 = new Vehicl2($oldVehicl2);
    		$vehicl2->add($hatchback, $hatchback->id);
-      $hatchback = hatchback::find($id)->decrement('availability');
+      //$hatchback = hatchback::find($id)->decrement('availability');
 
    		$request->session()->put('vehicl2', $vehicl2);
       //dd($request->session()->get('vehicl'));
@@ -43,12 +43,15 @@ class hatchbackController extends Controller
 
    }
 
+	
+	
    public function gethatchbackCart() {
     if (!Session::has('vehicl2')){
       return view('booking-hatchbackcart',['hatchbacks' => null]);
     }
     $oldVehicl2 = Session::get('vehicl2');
     $vehicl2 = new Vehicl2($oldVehicl2);
+    
     return view('booking-hatchbackcart',['hatchbacks'=> $vehicl2->items, 'totalprice' => $vehicl2->totalprice]);
    }
 

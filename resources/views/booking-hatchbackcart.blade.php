@@ -24,13 +24,13 @@
     <div class="row">
         <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
            
-            <strong>{{$totalprice}}</strong>
+           <!--<strong>{{$totalprice}}</strong>-->
         <form name="form1" id="ff" method="post" action="/payment2">
                                        {{ csrf_field() }}    
                                             <label class="row">
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" name="name" id="name" placeholder="Enter name" required="required" pattern="[A-Za-z]+$" />
+                                                        <input type="text" name="name" id="name" placeholder="Enter name as on Driving License" required="required" pattern="[A-Za-z][A-Za-z\s]*" />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
@@ -54,6 +54,23 @@
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
                                                         <input type="text" value="{{$hatchback['item']['vehiclename']}}" name="vehicletaken" id="vehicletaken"  required="required" />
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-1-2">
+                                                    <div class="wrap-col">
+                                                        <input type="hidden" value="{{$hatchback['item']['price']}}" name="bprice" id="bprice"  required="required" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-1-2">
+                                                    <div class="wrap-col">
+                                                        <input type="hidden" value="{{$hatchback['item']['deposit']}}" name="deposit" id="deposit"  required="required" />
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-1-2">
+                                                    <div class="wrap-col">
+                                                        <input type="hidden" value="{{$hatchback['item']['excessph']}}" name="excessph" id="excessph"  required="required" />
                                                     </div>@endforeach
                                                 </div>
                                                 <div class="col-1-2">
@@ -70,7 +87,7 @@
                                                 <div class="col-1-2">
                                                     <label>Pick up Date</label>
                                                     <div class="wrap-col">
-                                                        <input type="date" name="pick" id="pick" required="required" min="2017-05-10" max="2017-05-12" />
+                                                        <input type="date" name="pick" id="pick" required="required" min="2017-05-27" max="2017-05-28" />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHatchbackcarsTable extends Migration
+class CreateFhatchbackTable extends Migration
 {
     /**
      * Run the migrations.
@@ -21,6 +21,8 @@ class CreateHatchbackcarsTable extends Migration
             $table->string('fuel');
             $table->string('seats');
             $table->string('price');
+            $table->string('deposit');
+            $table->string('excessph');
             $table->integer('availability');
         });
     }
@@ -32,6 +34,6 @@ class CreateHatchbackcarsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('hatchbacks');
+        //
     }
 }

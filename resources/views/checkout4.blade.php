@@ -14,7 +14,7 @@
         				<div class="col-xs-12">
 	        				<div class="form-group">
 	        					<label for="name">Name On Card</label>
-	        					<input type="text" id="card-name" name="name" class="form-control" required="required" pattern="[A-Za-z]+$">
+	        					<input type="text" id="card-name" name="name" class="form-control" required="required" pattern="[A-Za-z][A-Za-z\s]*">
 	        				</div> 
         				</div>
         				<div class="col-xs-12">

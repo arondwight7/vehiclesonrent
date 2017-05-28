@@ -33,8 +33,9 @@
                         <td>{{$value->name}} </td>
                         <td>{{$value->dl}} </td>
                         <td>{{$value->pick}} </td>
+						
                         <td>{{$value->picktime}} </td>
-                        <td><a href="settlepayment2/{{ $value->id }}"><span class="btn btn-primary">Settle</span></a></td>
+                        <td><a href="\settlepayment2/{{ $value->email }}"><span class="btn btn-primary">Settle</span></a></td>
                     </tr>
                     @endforeach
                 </table>

@@ -16,7 +16,9 @@ class gearTableSeeder extends Seeder
         	'vehiclename' => 'Honda Activa',
         	'transmission' => 'Automatic',
         	'seats' => 'two',
-        	'price' => '1340',
+        	'price' => '760',
+            'deposit' => '5000',
+            'excessph' => '100',
             'availability' => '4'
 
         	]);
@@ -27,17 +29,21 @@ class gearTableSeeder extends Seeder
         	'vehiclename' => 'Bajaj Avengers',
         	'transmission' => 'Gear',
         	'seats' => 'two',
-        	'price' => '1680',
+        	'price' => '890',
+            'deposit' => '5000',
+            'excessph' => '100',
             'availability' => '3'
         	]);
         $gear->save();
 
         $gear= new \App\gear([
         	'imagepath' => 'images/cbr.png',
-        	'vehiclename' => 'Honda CBR',
+        	'vehiclename' => 'Honda CBR 150',
         	'transmission' => 'Gear',
         	'seats' => 'two',
-        	'price' => '1680',
+        	'price' => '920',
+            'deposit' => '5000',
+            'excessph' => '100',
             'availability' => '2'
         	]);
         $gear->save();
@@ -47,7 +53,9 @@ class gearTableSeeder extends Seeder
         	'vehiclename' => 'Honda Dio',
         	'transmission' => 'Automatic',
         	'seats' => 'two',
-        	'price' => '1340',
+        	'price' => '740',
+            'deposit' => '5000',
+            'excessph' => '100',
             'availability' => '2'
         	]);
         $gear->save();
@@ -58,17 +66,21 @@ class gearTableSeeder extends Seeder
         	'vehiclename' => 'TVS Pep',
         	'transmission' => 'Automatic',
         	'seats' => 'two',
-        	'price' => '1340',
+        	'price' => '680',
+            'deposit' => '5000',
+            'excessph' => '100',
             'availability' => '3'
         	]);
         $gear->save();
 
         $gear= new \App\gear([
         	'imagepath' => 'images/pulsar.png',
-        	'vehiclename' => 'Bajaj Pulsar',
+        	'vehiclename' => 'Bajaj Pulsar 150',
         	'transmission' => 'Gear',
         	'seats' => 'two',
-        	'price' => '1680',
+        	'price' => '850',
+            'deposit' => '5000',
+            'excessph' => '100',
             'availability' => '4'
         	]);
         $gear->save();
@@ -78,7 +90,9 @@ class gearTableSeeder extends Seeder
         	'vehiclename' => 'Honda Shine',
         	'transmission' => 'Gear',
         	'seats' => 'two',
-        	'price' => '1680',
+        	'price' => '840',
+            'deposit' => '5000',
+            'excessph' => '100',
             'availability' => '3'
         	]);
         $gear->save();
@@ -88,7 +102,9 @@ class gearTableSeeder extends Seeder
         	'vehiclename' => 'TVS Wego',
         	'transmission' => 'Automatic',
         	'seats' => 'two',
-        	'price' => '1340',
+        	'price' => '710',
+            'deposit' => '5000',
+            'excessph' => '100',
             'availability' => '2'
         	]);
         $gear->save();

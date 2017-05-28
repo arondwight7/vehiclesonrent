@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCustomersTable extends Migration
+class CreateFcustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,6 +18,10 @@ class CreateCustomersTable extends Migration
             $table->string('email');
             $table->integer('phoneno');
             $table->string('address');
+            $table->string('vehicletaken');
+            $table->string('bprice');
+            $table->string('deposit');
+            $table->string('excessph');
             $table->string('dl');
             $table->date('exp');
             $table->date('pick');

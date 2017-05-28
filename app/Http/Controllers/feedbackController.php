@@ -22,4 +22,6 @@ class feedbackController extends Controller
     	$ins->save();
     	return view('feedsuccess');
     }
+
+    
 }

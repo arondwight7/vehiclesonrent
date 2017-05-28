@@ -1,0 +1,5 @@
+https://stripe.com/docs/api#create_charge     	tokens
+ 
+https://dashboard.stripe.com/test/dashboard		dashboard
+
+https://stripe.com/docs							card

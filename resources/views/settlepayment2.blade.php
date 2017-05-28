@@ -1,6 +1,19 @@
 @extends('layouts.deff')
 
 @section('content')
+<!--<<script type="text/javascript">
+function cal()
+{
+    var hrs = document.getElementById("excessh").value;
+    var bchrg = document.getElementById("basiccharge").value;
+    var exprice = document.getElementById("excessph").value;
+    var total = (hrs*exprice)+bchrg;
+    document.getElementById("totaltext").innerHTML = total;
+    return total;
+
+}
+
+</script>-->
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -9,13 +22,13 @@
             <div class="wrap-container">
                 <div class="crumbs">
                     <ul>
-                        <li><h1  style="margin: 40px 0;color: #212121;letter-spacing: 2px;font-weight: 500;">Welcome Admin</h1></li>
+                        <li><h1  style="margin: 40px 0;color: #212121;letter-spacing: 2px;font-weight: 500;">Generate Bill</h1></li>
                         <div class="crumbs">
-                    <ul>
+                    <!--<ul>
                         <li><a href="{{ url('/admin') }}">Admin Home</a></li>
                         
                         <li><a href="{{ url('/settlepayment') }}">Settle Payment</a></li>
-                    </ul>
+                    </ul>-->
                 </div>
                     
                 </div>
@@ -25,52 +38,90 @@
                     <tr>
                         <th>Name</th>
                         <th>Driving License Number</th>
-                        <th>Pick-up Date</th>
-                        <th>Pick-upTime</th>
+                        <th>Extra hours driven</th>
+                        
                         <th></th>
                     </tr>
-                    @foreach($settle1 as $value)
+                    @foreach($fd as $value)
                     <tr>
                         <td>{{$value->name}} </td>
-                        <td>{{$value->dl}} </td>
-                        <td>{{$value->pick}} </td>
-                        <td>{{$value->picktime}} </td>
+                        <td>{{$value->vehicletaken}} </td>
+                        <td>{{$value->excessh}} </td>
                         
+                        <td><a href="/finalacknowledgement/{{ $value->id }}"><span class="btn btn-primary">generate</span></a></td>
                     </tr>
                     @endforeach
                 </table>        
     <div class="row">
         <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                
-                <form action="/acknowledge1" method="post" id="checkout-form">
-                               @foreach($settle1 as $value)
+                  
+                <form action="/finalacknowledgement/{id}" method="post" id="finalack">
+                           @if($settle1)  
                                 <div class="row">
                                         <div class="col-xs-12">
                                                 <div class="form-group">
                                                         <label for="name">Name</label>
-                                                        <input type="text" value= "{{ $value->name}}" id="card-name" name="name" class="form-control" required="required" pattern="[A-Za-z]+$">
+                                                        <input type="text" name="name" value= "{{ $settle1->name}}" id="card-name" name="name" class="form-control" required="required" >
+                                                </div> 
+                                        </div>
+                                        <div class="col-xs-12">
+                                                <div class="form-group">
+                                                        
+                                                        <input type="hidden" name="dl" value= "{{ $settle1->dl}}" id="dl" name="dl" class="form-control" required="required" >
                                                 </div> 
                                         </div>
                                         <div class="col-xs-12">
                                                 <div class="form-group">
                                                         <label for="name">Vehicle Taken</label>
-                                                        <input type="text" value= "{{ $value->vehicletaken}}" id="card-number" class="form-control" required="required" pattern="[0-9]{16}">
+                                                        <input type="text" name="vehicletaken" value= "{{ $settle1->vehicletaken}}" id="vehicletaken" class="form-control" required="required" >
+                                                </div> 
+                                        </div>
+                                        
+                                        <div class="col-xs-12">
+
+                                                <div class="form-group">
+                                                   
+                                                        <label for="name">Basic Charges</label>
+                                                        <input type="text" name="bprice" id="bprice" value="{{ $settle1->bprice}}"class="form-control" required="required">
+                                                  
+                                                </div> 
+                                        </div>
+                                        
+                                        
+                                        <div class="col-xs-12">
+                                                <div class="form-group">
+                                                    
+                                                        <label for="name">Extra Charges</label>
+                                                        <input type="text" name="excessph" value= "{{ $settle1->excessph}}" id="excessph" class="form-control" required="required">
+                                                    
+                                                </div> 
+                                        </div>
+                                        <div class="col-xs-12">
+
+                                                <div class="form-group">
+                                                   
+                                                        
+                                                        <input type="hidden" name="deposit" id="deposit" value="{{$settle1->deposit}}"class="form-control" required="required">
+                                                  
                                                 </div> 
                                         </div>
                                         <div class="col-xs-12">
                                                 <div class="form-group">
                                                         <label for="name">Number of excess hours</label>
-                                                        <input type="text" id="card-number" class="form-control" required="required" pattern="[0-9]{16}">
+                                                        <input type="text" name="excessh" id="excessh" col-xs-12class="form-control" required="required">
                                                 </div> 
+                                        </div>@endif
+                                        <div class="price pull-left">
+                                            <button type="submit" class="btn btn-success" >Calculate</button>  
                                         </div>
 
-                                </div>@endforeach
-                                {{ csrf_field()}}
-                                <div class="price pull-right">
-                                <button type="submit" class="btn btn-success">Proceed</button>  
-      </div>
+                                        
     
+                                </div>
+                                {{ csrf_field()}}
+                                
                 </form>
+
         </div>
         </div>
                 </div>

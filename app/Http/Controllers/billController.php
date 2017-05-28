@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\customer;
+use App\bill;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
-class customerController3 extends Controller
+
+class billController extends Controller
 {
     public function __construct()
      {
@@ -15,21 +16,26 @@ class customerController3 extends Controller
 
      public function insert()
      {
-      $ins = new customer;
+      $ins = new bill;
       $ins->name = Input::get('name');
-      $ins->email = Input::get('email');  
-      $ins->phoneno = Input::get('phone');
-      $ins->address = Input::get('address');
+      $ins->dl = Input::get('dl');
       $ins->vehicletaken = Input::get('vehicletaken');
       $ins->bprice = Input::get('bprice');
       $ins->deposit = Input::get('deposit');
       $ins->excessph = Input::get('excessph');
-      $ins->dl = Input::get('dl');
-      $ins->exp = Input::get('exp');
-      $ins->pick = Input::get('pick');
-      $ins->picktime = Input::get('picktime');
-      $ins->save();
-      return view('payment3');
-    }
+      $ins->excessh = Input::get('excessh');
       
+      
+      $ins->save();
+      return back();
+    }
+
+    public function fdis($id)
+    {
+      $fd = new bill;
+      $fd = bill::where('id',$id)->get();
+      return view('finalacknowledgement',compact('fd'));
+    }
+
+    
 }

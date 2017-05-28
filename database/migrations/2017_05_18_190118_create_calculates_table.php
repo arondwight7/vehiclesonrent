@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCustomTable extends Migration
+class CreateCalculatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,19 +12,17 @@ class CreateCustomTable extends Migration
      */
     public function up()
     {
-        Schema::create('customers', function(Blueprint $table){
+        Schema::create('calculates', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email');
-            $table->integer('phoneno');
-            $table->string('address');
-            $table->string('vehicletaken');
-            $table->string('dl');
-            $table->date('exp');
-            $table->date('pick');
-            $table->integer('picktime');
+            $table->string('vehiclename');
+            $table->integer('excesshours');
+            $table->integer('basiccharge');
+            $table->integer('extracharge');
+            $table->integer('totalcharge');
             $table->timestamps();
 
+    
         });
     }
 
@@ -35,6 +33,6 @@ class CreateCustomTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('calculates');
     }
 }

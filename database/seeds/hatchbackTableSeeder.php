@@ -18,8 +18,10 @@ class hatchbackTableSeeder extends Seeder
         	'fuel' => 'Diesel',
         	'seats' => 'Four',
         	'price' => '1250',
+            'deposit' => '20000',
+            'excessph' => '170',
             'availability' => '4'
-
+            
         	]);
         $hatchback->save();
 
@@ -29,7 +31,9 @@ class hatchbackTableSeeder extends Seeder
         	'transmission' => 'Manual',
         	'fuel' => 'Diesel',
         	'seats' => 'Four',
-        	'price' => '1250',
+        	'price' => '1350',
+            'deposit' => '20000',
+            'excessph' => '170',
             'availability' => '4'
         	]);
         $hatchback->save();
@@ -41,6 +45,8 @@ class hatchbackTableSeeder extends Seeder
         	'fuel' => 'Petrol',
         	'seats' => 'Four',
         	'price' => '1250',
+            'deposit' => '20000',
+            'excessph' => '170',
             'availability' => '2'
         	]);
         $hatchback->save();
@@ -51,7 +57,9 @@ class hatchbackTableSeeder extends Seeder
         	'transmission' => 'Automatic',
         	'fuel' => 'Petrol',
         	'seats' => 'Four',
-        	'price' => '1250',
+        	'price' => '1100',
+            'deposit' => '20000',
+            'excessph' => '170',
             'availability' => '3'
         	]);
         $hatchback->save();

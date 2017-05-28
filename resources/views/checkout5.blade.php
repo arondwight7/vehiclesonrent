@@ -15,7 +15,7 @@
                                         <div class="col-xs-12">
                                                 <div class="form-group">
                                                         <label for="name">Name On Card</label>
-                                                        <input type="text" id="card-name" name="name" class="form-control" required="required" pattern="[A-Za-z]+$">
+                                                        <input type="text" id="card-name" name="name" class="form-control" required="required" pattern="[A-Za-z][A-Za-z\s]*">
                                                 </div> 
                                         </div>
                                         <div class="col-xs-12">
@@ -33,7 +33,7 @@
                                         <div class="col-xs-12">
                                                 <div class="form-group">
                                                         <label for="name">Expiration Year</label>
-                                                        <input type="text" id="card-expiry-year" class="form-control" required="required" pattern="[2]{1}[0]{1}[1-9]{1}">
+                                                        <input type="text" id="card-expiry-year" class="form-control" required="required" pattern="[2]{1}[0]{1}[1-9]{2}">
                                                 </div> 
                                         </div>
                                         <div class="col-xs-12">

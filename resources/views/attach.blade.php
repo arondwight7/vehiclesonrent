@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-15 col-md-offset-0">
             <div class="panel panel-default">
                 <section id="container">
             <div class="wrap-container">
@@ -18,14 +18,13 @@
                     </ul>
                 </div>  
                     </ul>
-                </div>
+                
                     
                             
                                <div class="zerogrid">
                     <div class="row">
-                        <h1 class="t-center" style="margin: 40px 0;color: #212121;letter-spacing: 2px;font-weight: 500;">Attach Panel</h1>
-                        
-                        <div class="col-1-3">
+                                          
+                        <div class="col-1-4">
                             <img src="images/ad1.png" class="img-responsive" alt="">
                         </div>
                         <div class="col-2-3">
@@ -43,10 +42,30 @@
                                                 </div>
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" name="vname" id="name" placeholder="Enter Vehicle name" required="required" pattern="[A-Za-z]+$"/>
+                                                        <input type="text" name="vname" id="name" placeholder="Enter Vehicle name" required="required" pattern="[A-Za-z][A-Za-z\s]*"/>
                                                     </div>
                                                 </div>
+                                                
                                                 <div class="col-1-2">
+                                                    <div class="wrap-col">
+                                                        <input type="text" name="vmake" id="name" placeholder="Year Of Make" required="required" maxlength="4" pattern="[1-2]{1}[0-9]{3}" />
+                                                    </div>
+                                                </div></br>
+												<div class="form-group">
+                                                        
+                                                        <input type="hidden" name="available" value="true" id="available" name="available" class="form-control" required="required" >
+                                                </div> 
+												<div class="form-group">
+                                                        
+                                                        <input type="hidden" name="oid" value="{{$id}}" id="oid" name="oid" class="form-control" required="required" >
+                                                </div> 
+                                                <div class="col-1-2">
+                                                    <div class="wrap-col">
+                                                        <input type="text" name="vcc" id="name" placeholder="Displacement" required="required" maxlength="4"  pattern="[1-2]{1}[0-9]{3}"/>
+                                                    </div>
+                                                </div>
+												
+												<div class="col-1-2">
                                                     <div class="wrap-col">
                                                         <input list="vehicles" name="vtype" placeholder="Vehicle Type" required="required" >
                                                           <datalist id="vehicles">
@@ -56,16 +75,9 @@
                                                           </datalist>
                                                     </div>
                                                 </div>
-                                                <div class="col-1-2">
-                                                    <div class="wrap-col">
-                                                        <input type="text" name="vmake" id="name" placeholder="Year Of Make" required="required" maxlength="4" pattern="[1-2]{1}[0-9]{3}" />
-                                                    </div>
-                                                </div></br>
-                                                <div class="col-1-2">
-                                                    <div class="wrap-col">
-                                                        <input type="text" name="vcc" id="name" placeholder="Displacement" required="required" maxlength="4"  pattern="[1-2]{1}[0-9]{3}"/>
-                                                    </div>
-                                                </div>
+												
+												
+												
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
                                                         <input list="vehiclescat" name="vcat" placeholder="Vehicle Category" required="required">
@@ -89,6 +101,7 @@
                             </div>
                         </div>
                     </div>
+					</div>
                 </div>
             </div>
         </section>

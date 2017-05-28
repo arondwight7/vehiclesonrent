@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSedanTable extends Migration
+class Fvehicles extends Migration
 {
     /**
      * Run the migrations.
@@ -12,17 +12,19 @@ class CreateSedanTable extends Migration
      */
     public function up()
     {
-        Schema::create('sedans', function (Blueprint $table) {
+        Schema::create('Vehicles', function(Blueprint $table){
             $table->increments('id');
+            $table->string('vregno');
+            $table->string('vname');
+            $table->string('vtype');
+			$table->boolean('available');
+            $table->string('vmake');
+			$table->integer('oid');
+            $table->integer('vcc');
+            $table->string('vcat');
             $table->timestamps();
-            $table->string('imagepath');
-            $table->string('vehiclename');
-            $table->string('transmission');
-            $table->string('fuel');
-            $table->string('seats');
-            $table->string('price');
-            $table->integer('availability');
-        });
+
+        });   
     }
 
     /**

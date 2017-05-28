@@ -13,7 +13,7 @@
                                         <div class="col-xs-12">
                                                 <div class="form-group">
                                                         <label for="name">User Name</label>
-                                                        <input type="text"  name="name" class="form-control" required="required" pattern="[A-Za-z]+$">
+                                                        <input type="text"  name="name" class="form-control" required="required" pattern="[A-Za-z][A-Za-z\s]*">
                                                 </div> 
                                         </div>
                                         <div class="col-xs-12">

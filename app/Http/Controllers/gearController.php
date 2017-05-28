@@ -39,7 +39,10 @@ class gearController extends Controller
       //dd($request->session()->get('vehicl3'));
    		return redirect()->route('twowheelergear');
    }
-
+	
+	
+	
+	
    public function getgearCart() {
     if (!Session::has('vehicl3')){
       return view('booking-gearcart',['gears' => null]);
@@ -73,7 +76,7 @@ class gearController extends Controller
       $charge = Charge::create(array(
       "amount" => 5000 * 100,
       "currency" => "usd",
-      "source" => "tok_1AGCAOJKrtHUdksMGqyGlMhH", // obtained with Stripe.js
+      "source" => "tok_1AL2tMJKrtHUdksMKkjFGkpr", // obtained with Stripe.js
       "description" => "Booking a bike"
     ));
       $order = new Order();

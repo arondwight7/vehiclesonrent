@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class gear extends Model
 {
-    protected $fillable = ['imagepath','vehiclename','transmission','seats','price','availability'];
+    protected $fillable = ['imagepath','vehiclename','transmission','seats','price','deposit','excessph','availability'];
 }

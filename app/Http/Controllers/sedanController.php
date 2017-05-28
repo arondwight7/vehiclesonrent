@@ -6,6 +6,7 @@ use App\sedan;
 use App\Order;
 use Auth;
 use App\Vehicl;
+use App\vehicle;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Session;
@@ -16,10 +17,12 @@ class sedanController extends Controller
     public function __construct()
      {
          $this->middleware('auth');
+         
      }
 
     public function getsedan()
     { 
+      
     	$sedans =\App\sedan::all();
     	return view('fourwheelersedan', ['sedans' => $sedans]);
    }
@@ -35,12 +38,14 @@ class sedanController extends Controller
    		$oldVehicl = Session::has('vehicl') ? Session::get('vehicl') : null;
    		$vehicl = new Vehicl($oldVehicl);
    		$vehicl->add($sedan, $sedan->id);
-       $sedan = sedan::find($id)->decrement('availability');
+       //$sedan = sedan::find($id)->decrement('availability');
    		$request->session()->put('vehicl', $vehicl);
       //dd($request->session()->get('vehicl'));
    		return redirect()->route('fourwheelersedan');
    }
 
+
+   
    public function getCart() {
     if (!Session::has('vehicl')){
       return view('booking-cart',['sedans' => null]);
@@ -56,7 +61,7 @@ class sedanController extends Controller
    // return back();
    //}
 
-   public function getCheckout()
+   public function getCheckout($vregno)
    {   
     if (!Session::has('vehicl')){
       return view('booking-cart',['sedans' => null]);
@@ -64,7 +69,8 @@ class sedanController extends Controller
     $oldVehicl = Session::get('vehicl');
     $vehicl = new Vehicl($oldVehicl);
     $total = 25000;
-    return view('checkout2',['total' =>$total]);
+	
+    return view('checkout2',compact('total','vregno'));
    }
 
    public function getProfile()
@@ -77,7 +83,7 @@ class sedanController extends Controller
     return view('orders',['orders' => $orders]);
    }
 
-   public function postCheckout()
+   public function postCheckout(Request $request)
    {
     if (!Session::has('vehicl')){
       return redirect()->route('bookinghatchbackcart');
@@ -89,22 +95,24 @@ class sedanController extends Controller
     try{ $total = 25000;
       $charge = Charge::create(array(
       "amount" => 25000 * 100,
+      "source" => "tok_1AORPYJKrtHUdksMw9judyva", // obtained with Stripe.js
       "currency" => "usd",
-      "source" => "tok_1AHn9BJKrtHUdksMHyj4cSkp", // obtained with Stripe.js
       "description" => "Booking a sedan car"
     ));
       $order = new Order();
       $order->vehicl = serialize($vehicl);
-      //$order->name = $request->input('name');
+      $order->name = $request->input('vregno');
       $order->payment_id = $charge->id;
-
+	  
       Auth::user()->orders()->save($order);
+	  $ve = vehicle::where('vregno','=',$request->input('vregno'))->select('vname')->first();
+	  $sedan = sedan::where('vehiclename','=',$ve->vname)->decrement('availability');
+	  vehicle::where('vregno','=',$request->input('vregno'))->update(['available'=>'1']);
     } catch (\Exception $e){
-      return redirect()->route('checkout2')->with('error', $e->getMessage());
-
+      return redirect('checkout2/'.$request->input('vregno').'/')->with('error', $e->getMessage());
     }
     Session::forget('vehicl');
-    return redirect()->route('acknowledge')->with('success', 'Payment done Successfully');    
+    return redirect('acknowledge')->with('success', 'Payment done Successfully');    
    }
 
    

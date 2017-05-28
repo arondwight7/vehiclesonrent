@@ -26,15 +26,15 @@ Route::get('/fourwheelersedan', 'PagesController@fourwheelersedan');
 Route::get('/fourwheelersuv', 'PagesController@fourwheelersuv'); 
 Route::get('/attachsuccess', 'PagesController@attachsuccess'); 
  
-Route::get('/profile', 'ProfilesController@show');
+//Route::get('/profile', 'ProfilesController@show');
 
 Route::post('/attach', 'ownerController@insert');
 Route::post('/attachsuccess', 'vehicleController@attach');
 
-Route::get('/checkout2', 'PagesController@checkout2');
-Route::get('/checkout3', 'PagesController@checkout3');
-Route::get('/checkout4', 'PagesController@checkout4');
-Route::get('/checkout5', 'PagesController@checkout5');
+//Route::get('/checkout2', 'PagesController@checkout2');
+//Route::get('/checkout3', 'PagesController@checkout3');
+//Route::get('/checkout4', 'PagesController@checkout4');
+//Route::get('/checkout5', 'PagesController@checkout5');
 
 Route::get('/acknowledge', 'PagesController@acknowledge');
 Route::get('/acknowledge1', 'PagesController@acknowledge1');
@@ -45,7 +45,8 @@ Route::get('/payment', 'PagesController@payment');
 Route::get('/payment1', 'PagesController@payment1');
 Route::get('/payment2', 'PagesController@payment2');
 Route::get('/payment3', 'PagesController@payment3');
-
+Route::get('/finalacknowledgement/{id}', 'billController@fdis'); //display
+Route::post('/finalacknowledgement/{id}', 'billController@insert'); //display
 Route::post('/payment', 'customerController@insert');
 Route::post('/payment1', 'customerController1@insert');
 Route::post('/payment2', 'customerController2@insert');
@@ -66,13 +67,16 @@ Route::get('/adminavail', 'availableController@suv');
 
 Route::post('/feedsuccess', 'feedbackController@insert');
 
+Route::post('/calculatesettle','settleController@calculate');
+
+
 Route::get('/orders', [
 	'uses' => 'sedanController@getProfile',
 	'as' => 'orders',
 	'middleware' => 'auth'
 	]);
 
-Route::get('/checkout2', [
+Route::get('/checkout2/{vregno}', [
 	'uses' => 'sedanController@getcheckout',
 	'as' => 'checkout2',
 	'middleware' => 'auth'

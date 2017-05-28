@@ -39,7 +39,7 @@
             @endcan
         <div class="clearfix">
           <div class="price pull-left">{{$sedan->price}} / 8 hours</div>
-          <h5>Excess 200/hour</h5>
+          <h5>Excess 230/hour</h5>
           <p><a href="{{ route('sedan.bookasedan', ['id' => $sedan->id]) }}" class="btn btn-info pull-right" role="button">Select this one</a> </p>
         </div>
         

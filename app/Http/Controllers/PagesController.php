@@ -183,6 +183,12 @@ public function twowheelergear()
 		return view('adminavail');
 	}
 
+	public function finalacknowledgement()
+	{
+		
+		return view('finalacknowledgement/{id}');
+	}	
+
 	
 
 }

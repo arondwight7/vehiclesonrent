@@ -13,23 +13,12 @@
                         <div class="crumbs">
                     <ul>
                         <li><a href="{{ url('/admin') }}">Admin Home</a></li>
-                        <li><a href="#">Attach vehicles</a></li>
-                        <li><a href="#">Owner Form</a></li>
-                        <li><a href="{{ url('/settlepayment') }}">Settle Payment</a></li>
-                    </ul>
-                </div>
-                    </ul>
-                </div>
-                    
-                            
-                <div class="zerogrid">
-                    <div class="row">
-                        <h1 class="t-center" style="margin: 40px 0;color: #212121;letter-spacing: 2px;font-weight: 500;">Attach Panel</h1>
                         
-                        <div class="col-1-3">
-                            <img src="images/ad1.png" class="img-responsive" alt="">
-                        </div>
-                        <div class="col-2-3">
+                        <li><a href="{{ url('/settlepayment') }}">Settle Payment</a></li>
+                        <li><a href="{{ url('/adminavail') }}">Available Cars</a></li>
+                    </ul>
+                </div>
+				<div class="col-2-3">
                             <div class="wrap-col">
                                 <div class="contact">
                                     <h3 style="margin: 20px 0 20px 30px">Owner Registration Form</h3>
@@ -39,7 +28,7 @@
                                             <label class="row">
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" name="name" id="name" placeholder="Enter name" required="required" pattern="[A-Za-z]+$" />
+                                                        <input type="text" name="name" id="name" placeholder="Enter name" required="required" pattern="[A-Za-z][A-Za-z\s]*" />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
@@ -75,6 +64,20 @@
                             </div>
                         </div>
                     </div>
+                    </ul>
+                </div>
+                    
+                            
+                <div class="zerogrid">
+                    <div class="row">
+                        <h1 class="t-center" style="margin: 40px 0;color: #212121;letter-spacing: 2px;font-weight: 500;">Attach Panel</h1>
+                        
+                        <div class="col-1-3">
+                            <img src="images/ad1.png" class="img-responsive" alt="">
+                        </div>
+                        
+					
+					
                 </div>
             </div>
         </section>

@@ -41,6 +41,8 @@ class suvController extends Controller
    		return redirect()->route('fourwheelersuv');
    }
 
+   
+   
    public function getsuvCart() {
     if (!Session::has('vehicl1')){
       return view('booking-suvcart',['suvs' => null]);
@@ -74,7 +76,7 @@ class suvController extends Controller
       $charge = Charge::create(array(
       "amount" => 30000 * 100,
       "currency" => "usd",
-      "source" => "tok_1AH9OGJKrtHUdksM3fcVSBI9", // obtained with Stripe.js
+      "source" => "tok_1AKPG8JKrtHUdksMxJYceZXq", // obtained with Stripe.js
       "description" => "Booking a SUV car"
     ));
       $order = new Order();

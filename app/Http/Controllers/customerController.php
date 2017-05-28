@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\customer;
+use App\vehicle;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
 class customerController extends Controller
@@ -21,12 +22,19 @@ class customerController extends Controller
       $ins->phoneno = Input::get('phone');
       $ins->address = Input::get('address');
       $ins->vehicletaken = Input::get('vehicletaken');
+      $ins->bprice = Input::get('bprice');
+      $ins->deposit = Input::get('deposit');
+      $ins->excessph = Input::get('excessph');
       $ins->dl = Input::get('dl');
       $ins->exp = Input::get('exp');
       $ins->pick = Input::get('pick');
       $ins->picktime = Input::get('picktime');
       $ins->save();
-      return view('payment');
+	  $vno = vehicle::where([['vname','=',Input::get('vehicletaken')],['available','=','0']])->select('vregno')->first();
+	  
+	  $samp = $vno->vregno;
+
+      return view('payment',compact('samp'));
     }
       
 }

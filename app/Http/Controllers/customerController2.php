@@ -21,10 +21,14 @@ class customerController2 extends Controller
       $ins->phoneno = Input::get('phone');
       $ins->address = Input::get('address');
       $ins->vehicletaken = Input::get('vehicletaken');
+      $ins->bprice = Input::get('bprice');
+      $ins->deposit = Input::get('deposit');
+      $ins->excessph = Input::get('excessph');
       $ins->dl = Input::get('dl');
       $ins->exp = Input::get('exp');
       $ins->pick = Input::get('pick');
       $ins->picktime = Input::get('picktime');
+
       $ins->save();
       return view('payment2');
     }

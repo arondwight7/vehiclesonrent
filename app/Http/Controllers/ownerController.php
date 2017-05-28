@@ -24,7 +24,8 @@ class ownerController extends Controller
     	$ins->pin = Input::get('pin');
     	$ins->city = Input::get('city');
     	$ins->save();
-    	return view('attach');
+		$id=$ins->id;
+    	return view('attach',compact('id'));
     }
 
 

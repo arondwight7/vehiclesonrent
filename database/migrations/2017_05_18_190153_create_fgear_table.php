@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGearsTable extends Migration
+class CreateFgearTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,6 +20,10 @@ class CreateGearsTable extends Migration
             $table->string('transmission');
             $table->string('seats');
             $table->string('price');
+            $table->string('deposit');
+            $table->string('excessph');
+            $table->integer('availability');
+    
         });
     }
 
@@ -30,6 +34,6 @@ class CreateGearsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('gears');
+        //
     }
 }

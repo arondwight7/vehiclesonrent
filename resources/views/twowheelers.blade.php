@@ -44,7 +44,7 @@
          
           
           <div class="price pull-left">{{$hatchback->price}} / 8 hours</div>
-          <h5>Excess 150/hour</h5>
+          <h5>Excess 170/hour</h5>
           <p><a href="{{ route('sedan.bookahatchback', ['id' => $hatchback->id]) }}" class="btn btn-info pull-right" role="button" onc>Select this one</a> </p>
         </div>
         

@@ -7,8 +7,8 @@
             <ul class="list-group">
                 @foreach($sedans as $sedan)
                     <li class="lists-group-item">
+                        <h1>Enter the details</h1>
                         
-                        <h1>{{$sedan['item']['vehiclename']}}</h1>
                         
                         <!--<div class="btn-group">
                             <button type="button" class="btn btn-primary btn-xs dropdoown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
@@ -24,40 +24,66 @@
     <div class="row">
         <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
            
-            <strong>{{$totalprice}}</strong>
-                <form name="form1" id="ff" method="post" action="/payment">
+                    <form name="form1" id="ff" method="post" action="/payment">
                                        {{ csrf_field() }}    
                                             <label class="row">
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" name="name" id="name" placeholder="Enter name" required="required" pattern="[A-Za-z]+$" />
+                                                      
+														<input type="hidden" name="name" id="name" value="{{Auth::user()->name}}" placeholder="Enter name as on Driving License" required="required" pattern="[A-Za-z][A-Za-z\s]*" />
+                                                    </div>
+                                                </div>
+												<div class="col-1-2">
+                                                    <div class="wrap-col">
+													<label>Enter Driving License number</label>
+                                                        <input type="text" name="dl" id="dl" placeholder="Enter Driving License number" pattern="[A-Za-z]{2}[0-9]{13}" required="required"  />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="email" name="email" id="email" placeholder="Enter email" required="required" />
+													
+                                                        <input type="hidden" name="email" value="{{Auth::user()->email}}" id="email" placeholder="Enter email" required="required" />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
+													<label>Enter Phone Number</label>
                                                         <input type="text" name="phone" id="phone" placeholder="Enter Phone Number" pattern="[7-9]{1}[0-9]{9}" required="required"  />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
+													<label>Enter Address</label>
                                                         <input type="textarea" name="address" id="address" placeholder="Enter Address" required="required" />
                                                     </div>
                                                 </div>
+                                                @foreach($sedans as $sedan)         
+                        
+                        
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" value="" name="vehicletaken" id="vehicletaken"  required="required" />
+													<label>Selected Vehicle</label>
+                                                        <input type="text" value="{{$sedan['item']['vehiclename']}}" name="vehicletaken" id="vehicletaken"  required="required" />
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-1-2">
+                                                    <div class="wrap-col">
+                                                        <input type="hidden" value="{{$sedan['item']['price']}}" name="bprice" id="bprice"  required="required" />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" name="dl" id="dl" placeholder="Enter Driving License number" pattern="[A-Za-z]{2}[0-9]{13}" required="required"  />
+                                                        <input type="hidden" value="{{$sedan['item']['deposit']}}" name="deposit" id="deposit"  required="required" />
                                                     </div>
                                                 </div>
+                                                
+                                                <div class="col-1-2">
+                                                    <div class="wrap-col">
+                                                        <input type="hidden" value="{{$sedan['item']['excessph']}}" name="excessph" id="excessph"  required="required" />
+                                                    </div>@endforeach
+                                                </div>
+                                                
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
                                                         <label>Driving License Exp Date</label>
@@ -67,13 +93,7 @@
                                                 <div class="col-1-2">
                                                     <label>Pick up Date</label>
                                                     <div class="wrap-col">
-                                                        <input type="date" name="pick" id="pick" required="required" min="2017-05-10" max="2017-05-12" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-1-2">
-                                                    <label>Pick up Date</label>
-                                                    <div class="wrap-col">
-                                                        <input type="date" name="pick" id="pick" required="required" min="2017-05-10" max="2017-05-12" />
+                                                        <input type="date" name="pick" id="pick" required="required" min="2017-05-27" max="2017-05-28" />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
@@ -107,10 +127,11 @@
                                                           <option value="23">11 PM</option>
 
                                                         </select>
-                                                    </div>                                            </label>
-
+                                                    </div>
+                                                </div>
+                                            </label>
                                                                                         <center><input class="sendButton" type="submit" name="submitcontact" value="Next"></center>
-                                        </form>        
+                                        </form>       
             
         </div>
     </div>

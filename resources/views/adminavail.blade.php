@@ -14,8 +14,7 @@
 
                     <ul>
                         <li><a href="{{ url('/admin') }}">Admin Home</a></li>
-                        <li><a href="#">Attach vehicles</a></li>
-                        <li><a href="#">Owner Form</a></li>
+                        
                         <li><a href="{{ url('/settlepayment') }}">Settle Payment</a></li>
                     </ul>
                 </div>
@@ -29,10 +28,16 @@
                     <tr>
                         
                         <th>Car Name</th>
+                        
+                        <th>seats</th>
+                        <th>Fuel</th>
                         <th>Availability</th>
                          @foreach($havail as $value)
                         <tr>
                             <td>{{ $value->vehiclename }}</td>
+                           
+                            <td>{{ $value->seats }}</td>
+                            <td>{{ $value->fuel }}</td>
                             <td>{{ $value->availability }}</td>
                         </tr>
                         @endforeach
@@ -45,10 +50,16 @@
                     <tr>
                         
                         <th>Car Name</th>
+                        
+                        <th>seats</th>
+                        <th>Fuel</th>
                         <th>Availability</th>
                          @foreach($seavail as $value)
                         <tr>
                             <td>{{ $value->vehiclename }}</td>
+                            
+                            <td>{{ $value->seats }}</td>
+                            <td>{{ $value->fuel }}</td>
                             <td>{{ $value->availability }}</td>
                         </tr>
                         @endforeach
@@ -61,12 +72,17 @@
                     <tr>
                         
                         <th>Car Name</th>
-                        <th>Availability</th>
                         
+                        <th>seats</th>
+                        <th>Fuel</th>
+                        <th>Availability</th>
                     </tr>
                     @foreach($savail as $value)
                         <tr>
                             <td>{{ $value->vehiclename }}</td>
+                            
+                            <td>{{ $value->seats }}</td>
+                            <td>{{ $value->fuel }}</td>
                             <td>{{ $value->availability }}</td>
                         </tr>
                         @endforeach
@@ -77,12 +93,16 @@
                     <tr>
                         
                         <th>Bike Name</th>
+                        
+                        <th>seats</th>
                         <th>Availability</th>
                         
                     </tr>
                     @foreach($gavail as $value)
                         <tr>
                             <td>{{ $value->vehiclename }}</td>
+                            
+                            <td>{{ $value->seats }}</td>
                             <td>{{ $value->availability }}</td>
                         </tr>
                         @endforeach
@@ -97,4 +117,5 @@
         </div>
     </div>
 </div>
+
 @stop

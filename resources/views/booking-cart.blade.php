@@ -35,16 +35,17 @@
                                                 </div>
 												<div class="col-1-2">
                                                     <div class="wrap-col">
-													<label>Enter Driving License number</label>
-                                                        <input type="text" name="dl" id="dl" placeholder="Enter Driving License number" pattern="[A-Za-z]{2}[0-9]{13}" required="required"  />
-                                                    </div>
-                                                </div>
-                                                <div class="col-1-2">
-                                                    <div class="wrap-col">
 													
                                                         <input type="hidden" name="email" value="{{Auth::user()->email}}" id="email" placeholder="Enter email" required="required" />
                                                     </div>
                                                 </div>
+												<div class="col-1-2">
+                                                    <div class="wrap-col">
+													<label>Enter Driving License number</label>
+                                                        <input type="text" name="dl" id="dl" placeholder="Enter Driving License number" pattern="[A-Za-z]{2}[0-9]{13}" required="required"  />
+                                                    </div>
+                                                </div>
+                                                
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
 													<label>Enter Phone Number</label>
@@ -93,7 +94,7 @@
                                                 <div class="col-1-2">
                                                     <label>Pick up Date</label>
                                                     <div class="wrap-col">
-                                                        <input type="date" name="pick" id="pick" required="required" min="2017-05-27" max="2017-05-28" />
+                                                        <input type="date" name="pick" id="pick" required="required" min="2017-05-30" max="2017-05-31" />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
@@ -130,7 +131,7 @@
                                                     </div>
                                                 </div>
                                             </label>
-                                                                                        <center><input class="sendButton" type="submit" name="submitcontact" value="Next"></center>
+                                           <center><input class="sendButton" type="submit" name="submitcontact" value="Next"></center>
                                         </form>       
             
         </div>

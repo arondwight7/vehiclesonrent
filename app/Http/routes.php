@@ -81,17 +81,17 @@ Route::get('/checkout2/{vregno}', [
 	'as' => 'checkout2',
 	'middleware' => 'auth'
 	]);
-Route::get('/checkout3', [
+Route::get('/checkout3/{vregno}', [
 	'uses' => 'suvController@getcheckout',
 	'as' => 'checkout3',
 	'middleware' => 'auth'
 	]);
-Route::get('/checkout4', [
+Route::get('/checkout4/{vregno}', [
 	'uses' => 'hatchbackController@getcheckout',
 	'as' => 'checkout4',
 	'middleware' => 'auth'
 	]);
-Route::get('/checkout5', [
+Route::get('/checkout5/{vregno}', [
 	'uses' => 'gearController@getcheckout',
 	'as' => 'checkout5',
 	'middleware' => 'auth'

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\customer;
+use App\vehicle;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
 class customerController2 extends Controller
@@ -30,7 +31,10 @@ class customerController2 extends Controller
       $ins->picktime = Input::get('picktime');
 
       $ins->save();
-      return view('payment2');
+	  $vno = vehicle::where([['vname','=',Input::get('vehicletaken')],['available','=','0']])->select('vregno')->first();
+		  
+		  $samp = $vno->vregno;
+      return view('payment2',compact('samp'));
     }
       
 }

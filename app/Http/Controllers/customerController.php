@@ -30,9 +30,9 @@ class customerController extends Controller
       $ins->pick = Input::get('pick');
       $ins->picktime = Input::get('picktime');
       $ins->save();
-	  $vno = vehicle::where([['vname','=',Input::get('vehicletaken')],['available','=','0']])->select('vregno')->first();
-	  
-	  $samp = $vno->vregno;
+		  $vno = vehicle::where([['vname','=',Input::get('vehicletaken')],['available','=','0']])->select('vregno')->first();
+		  
+		  $samp = $vno->vregno;
 
       return view('payment',compact('samp'));
     }

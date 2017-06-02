@@ -31,15 +31,22 @@
                                             <label class="row">
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" name="name" id="name" placeholder="Enter name as on Driving License" required="required" pattern="[A-Za-z][A-Za-z\s]*" />
+                                                      
+														<input type="hidden" name="name" id="name" value="{{Auth::user()->name}}" placeholder="Enter name as on Driving License" required="required" pattern="[A-Za-z][A-Za-z\s]*" />
+                                                    </div>
+                                                </div>
+												<div class="col-1-2">
+                                                    <div class="wrap-col">
+													
+                                                        <input type="hidden" name="email" value="{{Auth::user()->email}}" id="email" placeholder="Enter email" required="required" />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="email" name="email" id="email" placeholder="Enter email" required="required" />
+                                                        <input type="text" name="dl" id="dl" placeholder="Enter Driving License number" pattern="[A-Za-z]{2}[0-9]{13}" required="required"  />
                                                     </div>
                                                 </div>
-                                                <div class="col-1-2">
+												<div class="col-1-2">
                                                     <div class="wrap-col">
                                                         <input type="text" name="phone" id="phone" placeholder="Enter Phone Number" pattern="[7-9]{1}[0-9]{9}" required="required"  />
                                                     </div>
@@ -74,11 +81,7 @@
                                                         <input type="hidden" value="{{$suv['item']['excessph']}}" name="excessph" id="excessph"  required="required" />
                                                     </div>@endforeach
                                                 </div>
-                                                <div class="col-1-2">
-                                                    <div class="wrap-col">
-                                                        <input type="text" name="dl" id="dl" placeholder="Enter Driving License number" pattern="[A-Za-z]{2}[0-9]{13}" required="required"  />
-                                                    </div>
-                                                </div>
+                                                
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
                                                         <label>Driving License Exp Date</label>
@@ -88,7 +91,7 @@
                                                 <div class="col-1-2">
                                                     <label>Pick up Date</label>
                                                     <div class="wrap-col">
-                                                        <input type="date" name="pick" id="pick" required="required" min="2017-05-27" max="2017-05-29" />
+                                                        <input type="date" name="pick" id="pick" required="required" min="2017-05-31" max="2017-05-31" />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
@@ -125,7 +128,7 @@
                                                     </div>
                                                 </div>
                                             </label>
-                                                                                        <center><input class="sendButton" type="submit" name="submitcontact" value="Next"></center>
+                                          <center><input class="sendButton" type="submit" name="submitcontact" value="Next"></center>
                                         </form>
         </div>
     </div>

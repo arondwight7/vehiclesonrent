@@ -38,6 +38,7 @@ function cal()
                     <tr>
                         <th>Name</th>
                         <th>Driving License Number</th>
+						<th>Vehicle Taken</th>
                         <th>Extra hours driven</th>
                         
                         <th></th>
@@ -45,7 +46,8 @@ function cal()
                     @foreach($fd as $value)
                     <tr>
                         <td>{{$value->name}} </td>
-                        <td>{{$value->vehicletaken}} </td>
+						<td>{{$value->dl}}</td>
+                        <!--<td>{{$value->vehicletaken}} </td>-->
                         <td>{{$value->excessh}} </td>
                         
                         <td><a href="/finalacknowledgement/{{ $value->id }}"><span class="btn btn-primary">generate</span></a></td>
@@ -111,9 +113,9 @@ function cal()
                                                         <input type="text" name="excessh" id="excessh" col-xs-12class="form-control" required="required">
                                                 </div> 
                                         </div>@endif
-                                        <div class="price pull-left">
+                                        <!--<div class="price pull-left">
                                             <button type="submit" class="btn btn-success" >Calculate</button>  
-                                        </div>
+                                        </div>-->
 
                                         
     

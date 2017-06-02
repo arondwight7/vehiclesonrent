@@ -21,7 +21,7 @@
         		<h4><span class="glyphicon glyphicon-ok-sign"></span>Feel free to call our customer care service 24X7</h4>
         		<div class="clearfix">
           <div class="price pull-right">
-        <a href="{{ route('checkout3')}}" class="btn btn-info btn-lg">
+        <a href="/checkout3/{{$samp}}" class="btn btn-info btn-lg">
           <span class="glyphicon glyphicon-ok-sign"></span> Proceed to pay Deposit
         </a>
       </div>

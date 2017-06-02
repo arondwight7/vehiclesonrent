@@ -36,6 +36,9 @@
                                                         <input type="text" id="card-expiry-year" class="form-control" required="required" pattern="[2]{1}[0]{1}[1-9]{2}">
                                                 </div> 
                                         </div>
+										<div>
+											<input type="hidden" id="vregno" name="vregno" value="{{$vregno}}" required="required" >
+										</div>
                                         <div class="col-xs-12">
                                                 <div class="form-group">
                                                         <label for="name">CVC</label>

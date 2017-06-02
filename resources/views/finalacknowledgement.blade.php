@@ -18,10 +18,10 @@
                                 <td><p class="h4">Name</p></td>
                                 <td><p class="h4">{{$v->name}}<p></td>
                             </tr>
-                            <tr>
+                            <!--<tr>
                                 <td><p class="h4">Vehicle taken</p></td>
                                 <td><p class="h4">{{$v->vehicletaken}}</p></td>
-                            </tr>
+                            </tr>-->
                             <tr>
                                 <td><p class="h4">Deposit Made</p></td>
                                 <td><p class="h4">{{$v->deposit}}</p></td>

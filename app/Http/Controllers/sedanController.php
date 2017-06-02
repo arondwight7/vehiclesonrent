@@ -10,7 +10,6 @@ use App\vehicle;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Session;
-
 use \Stripe\Charge;
 class sedanController extends Controller
 {
@@ -55,12 +54,6 @@ class sedanController extends Controller
     return view('booking-cart',['sedans'=> $vehicl->items, 'totalprice' => $vehicl->totalprice]);
    }
 
- //  public function deletecat($id)
-   //{
-    //$del = sedan::where('id',$id)->delete();
-   // return back();
-   //}
-
    public function getCheckout($vregno)
    {   
     if (!Session::has('vehicl')){
@@ -95,7 +88,7 @@ class sedanController extends Controller
     try{ $total = 25000;
       $charge = Charge::create(array(
       "amount" => 25000 * 100,
-      "source" => "tok_1AORPYJKrtHUdksMw9judyva", // obtained with Stripe.js
+      "source" => "tok_1APkXpJKrtHUdksME4IBe0CJ", // obtained with Stripe.js
       "currency" => "usd",
       "description" => "Booking a sedan car"
     ));

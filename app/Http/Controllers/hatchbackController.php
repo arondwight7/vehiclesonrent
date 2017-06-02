@@ -5,6 +5,7 @@ use \Stripe\stripe;
 use \Stripe\Charge;
 use App\hatchback;
 use App\Vehicl2;
+use App\vehicle;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Session;
@@ -55,7 +56,7 @@ class hatchbackController extends Controller
     return view('booking-hatchbackcart',['hatchbacks'=> $vehicl2->items, 'totalprice' => $vehicl2->totalprice]);
    }
 
-   public function getCheckout()
+   public function getCheckout($vregno)
    {   
     if (!Session::has('vehicl2')){
       return view('booking-hatchbackcart',['hatchbacks' => null]);
@@ -63,10 +64,10 @@ class hatchbackController extends Controller
     $oldVehicl2 = Session::get('vehicl2');
     $vehicl2 = new Vehicl2($oldVehicl2);
     $total = 20000;
-    return view('checkout4',['total' =>$total]);
+    return view('checkout4',compact('total','vregno'));
    }
 
-   public function postCheckout()
+   public function postCheckout(Request $request)
    {
     if (!Session::has('vehicl2')){
       return redirect()->route('bookingcart');
@@ -79,17 +80,20 @@ class hatchbackController extends Controller
       $charge = Charge::create(array(
       "amount" => 20000 * 100,
       "currency" => "usd",
-      "source" => "tok_1AH7z8JKrtHUdksMKfqvClXc", // obtained with Stripe.js
+      "source" => "tok_1AOrzSJKrtHUdksMdq772vWt", // obtained with Stripe.js
       "description" => "Booking a Hatchback car"
     ));
       $order = new Order();
       $order->vehicl = serialize($vehicl2);
-      //$order->name = $request->input('name');
+      $order->name = $request->input('vregno');
       $order->payment_id = $charge->id;
 
       Auth::user()->orders()->save($order);
+	  $ve = vehicle::where('vregno','=',$request->input('vregno'))->select('vname')->first();
+	  $hatchback = hatchback::where('vehiclename','=',$ve->vname)->decrement('availability');
+	  vehicle::where('vregno','=',$request->input('vregno'))->update(['available'=>'1']);
     } catch (\Exception $e){
-      return redirect()->route('checkout4')->with('error', $e->getMessage());
+      return redirect('checkout4/'.$request->input('vregno').'/')->with('error', $e->getMessage());
 
     }
     Session::forget('vehicl2');

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\customer;
 use App\vehicle;
+use App\Order;
+use Auth;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
 class customerController extends Controller
@@ -32,9 +34,18 @@ class customerController extends Controller
       $ins->save();
 		  $vno = vehicle::where([['vname','=',Input::get('vehicletaken')],['available','=','0']])->select('vregno')->first();
 		  
-		  $samp = $vno->vregno;
-
+		    $samp = $vno->vregno;
+		  //$email = Auth::user()->email;
+	//$cu = customer::where('email','=',$email)->pluck('address')[0];
       return view('payment',compact('samp'));
     }
+	
+	public function cancel($id)
+	{
+		order::where('id','=',$id)->update(['cancel'=>'cancelled']);
+		$orders = order::where('id','=',$id)->get();
+	
+		return view('/orders',compact('orders'))->with('success', 'Successfully cancelled');
+	}
       
 }

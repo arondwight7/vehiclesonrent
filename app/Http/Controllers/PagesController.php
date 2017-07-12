@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
-
+use Auth;
+use App\customer;
 class PagesController extends Controller
 {
 	  public function __construct()
@@ -120,26 +121,52 @@ public function twowheelergear()
 
 	public function acknowledge()
 	{
+		$email = Auth::user()->email;
+		$cu = customer::where('email','=',$email)->pluck('address')[0];
+		$vt = customer::where('email','=',$email)->pluck('vehicletaken')[0];
+		$d = customer::where('email','=',$email)->pluck('deposit')[0];
+		$pn = customer::where('email','=',$email)->pluck('phoneno')[0];
+		$p = customer::where('email','=',$email)->pluck('pick')[0];
+		$pt = customer::where('email','=',$email)->pluck('picktime')[0];
+		return view('acknowledge',compact('cu','vt','d','pn','p','pt'));
 		
-		return view('acknowledge');
 	}
 
 	public function acknowledge1()
 	{
-		
-		return view('acknowledge1');
+		$email = Auth::user()->email;
+		$cu = customer::where('email','=',$email)->pluck('address')[0];
+		$vt = customer::where('email','=',$email)->pluck('vehicletaken')[0];
+		$d = customer::where('email','=',$email)->pluck('deposit')[0];
+		$pn = customer::where('email','=',$email)->pluck('phoneno')[0];
+		$p = customer::where('email','=',$email)->pluck('pick')[0];
+		$pt = customer::where('email','=',$email)->pluck('picktime')[0];
+		return view('acknowledge1',compact('cu','vt','d','pn','p','pt'));
 	}
 
 	public function acknowledge2()
 	{
-		
-		return view('acknowledge2');
+		$email = Auth::user()->email;
+		$cu = customer::where('email','=',$email)->pluck('address')[0];
+		$vt = customer::where('email','=',$email)->pluck('vehicletaken')[0];
+		$d = customer::where('email','=',$email)->pluck('deposit')[0];
+		$pn = customer::where('email','=',$email)->pluck('phoneno')[0];
+		$p = customer::where('email','=',$email)->pluck('pick')[0];
+		$pt = customer::where('email','=',$email)->pluck('picktime')[0];
+		return view('acknowledge2',compact('cu','vt','d','pn','p','pt'));
 	}
 
 	public function acknowledge3()
 	{
-		
-		return view('acknowledge3');
+		$email = Auth::user()->email;
+		$cu = customer::where('email','=',$email)->pluck('address')[0];
+		$vt = customer::where('email','=',$email)->pluck('vehicletaken')[0];
+		$d = customer::where('email','=',$email)->pluck('deposit')[0];
+		$pn = customer::where('email','=',$email)->pluck('phoneno')[0];
+		$p = customer::where('email','=',$email)->pluck('pick')[0];
+		$pt = customer::where('email','=',$email)->pluck('picktime')[0];
+		return view('acknowledge3',compact('cu','vt','d','pn','p','pt'));
+	
 	}
 
 	public function orders()
@@ -187,7 +214,13 @@ public function twowheelergear()
 	{
 		
 		return view('finalacknowledgement/{id}');
-	}	
+	}
+
+	public function settlepayment1()
+	{
+		
+		return view('settlepayment1/{id}');
+	}
 
 	
 

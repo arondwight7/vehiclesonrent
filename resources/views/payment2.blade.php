@@ -21,9 +21,10 @@
         		<h4><span class="glyphicon glyphicon-ok-sign"></span>Feel free to call our customer care service 24X7</h4>
         		<div class="clearfix">
           <div class="price pull-right">
+		  
         <a href="/checkout4/{{$samp}}" class="btn btn-info btn-lg">
           <span class="glyphicon glyphicon-ok-sign"></span> Proceed to pay Deposit
-        </a>
+        </a><h3> {{$cu}}  </h3>  
       </div>
   </div></br></br>
         </div>

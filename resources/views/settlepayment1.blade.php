@@ -21,21 +21,23 @@
                 </div>
                     <div class="wrap-container">
                 <div class="crumbs">
-                <table class="table table-hover" border="1">
+                <table class="table table-hover" >
                     <tr>
                         <th>Name</th>
                         <th>Driving License Number</th>
-                        <th>Pick-up Date</th>
-                        <th>Pick-upTime</th>
+						<th>Vehicle Taken</th>
+                        <th>Extra hours driven</th>
+                        
+                        <th></th>
                     </tr>
-                    @foreach($settle as $value)
+                    @foreach($fd as $value)
                     <tr>
                         <td>{{$value->name}} </td>
-                        <td>{{$value->dl}} </td>
-                        <td>{{$value->pick}} </td>
-						
-                        <td>{{$value->picktime}} </td>
-                        <td><a href="\settlepayment2/{{ $value->email }}"><span class="btn btn-primary">Settle</span></a></td>
+						<td>{{$value->dl}}</td>
+                        <td>{{$value->vehicletaken}} </td>
+                        <td>{{$value->excessh}} </td>
+                        
+                        <td><a href="/finalacknowledgement/{{ $value->id }}"><span class="btn btn-primary">generate</span></a></td>
                     </tr>
                     @endforeach
                 </table>

@@ -27,7 +27,7 @@ class billController extends Controller
       
       
       $ins->save();
-      return back();
+      return redirect("settlepayment1/".Input::get('id'));
     }
 
     public function fdis($id)

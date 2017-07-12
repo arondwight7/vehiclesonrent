@@ -68,18 +68,7 @@
                 </div>
                     
                             
-                <div class="zerogrid">
-                    <div class="row">
-                        <h1 class="t-center" style="margin: 40px 0;color: #212121;letter-spacing: 2px;font-weight: 500;">Attach Panel</h1>
-                        
-                        <div class="col-1-3">
-                            <img src="images/ad1.png" class="img-responsive" alt="">
-                        </div>
-                        
-					
-					
-                </div>
-            </div>
+                
         </section>
        </div>
         </div>

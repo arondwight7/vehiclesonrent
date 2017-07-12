@@ -33,23 +33,8 @@ class settleController extends Controller
 		$order = Order::where('user_id','=',$user->id)->select('name')->first();
 		
 		vehicle::where('vregno','=',$order->name)->update(['available'=>'0']);
-		$ret = vehicle::where('vregno','=',$order->name)->select('vcat','vname')->first();
-		
-		if($ret->vcat=="Hatchback")
-		{
-			hatchback::where('vehiclename','=',$ret->vname)->increment('availability');
-		}
-		else if($ret->vcat=="Sedan"){
-			sedan::where('vehiclename','=',$ret->vname)->increment('availability');
-		}
-		else if($ret->vcat=="SUV"){
-			suv::where('vehiclename','=',$ret->vname)->increment('availability');
-		}
-		else if($ret->vcat=="With Gear"){
-			gear::where('vehiclename','=',$ret->vname)->increment('availability');
-		}
-        $fd = bill::all();
-    	return view('settlepayment2',compact('settle1','fd'));
+	  // $fd = bill::all();
+    	return view('settlepayment2',compact('settle1','id'));
     }
 
     public function calculate(Request $request)
@@ -66,5 +51,31 @@ class settleController extends Controller
         return back();
     }
 
+	 public function settlepayment1($id)
+    {
 
+    	$settle1 = new customer;
+    	$settle1 = customer::where('email','=',$id)->first();
+		$user = User::where('email','=',$id)->first();
+		$order = Order::where('user_id','=',$user->id)->select('name')->first();
+		
+		vehicle::where('vregno','=',$order->name)->update(['available'=>'0']);
+		$ret = vehicle::where('vregno','=',$order->name)->select('vcat','vname')->first();
+		
+		if($ret->vcat=="Hatchback")
+		{
+			hatchback::where('vehiclename','=',$ret->vname)->increment('availability');
+		}
+		else if($ret->vcat=="Sedan"){
+			sedan::where('vehiclename','=',$ret->vname)->increment('availability');
+		}
+		else if($ret->vcat=="SUV"){
+			suv::where('vehiclename','=',$ret->vname)->increment('availability');
+		}
+		else if($ret->vcat=="Gear"){
+			gear::where('vehiclename','=',$ret->vname)->increment('availability');
+		}
+        $fd = bill::all();
+    	return view('settlepayment1',compact('settle1','fd'));
+    }
 }

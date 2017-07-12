@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\customer;
 use App\vehicle;
+use Auth;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
 class customerController2 extends Controller
@@ -34,7 +35,9 @@ class customerController2 extends Controller
 	  $vno = vehicle::where([['vname','=',Input::get('vehicletaken')],['available','=','0']])->select('vregno')->first();
 		  
 		  $samp = $vno->vregno;
-      return view('payment2',compact('samp'));
+		  $email = Auth::user()->email;
+	$cu = customer::where('email','=',$email)->pluck('address')[0];
+      return view('payment2',compact('samp','cu'));
     }
       
 }

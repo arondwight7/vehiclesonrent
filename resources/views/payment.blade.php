@@ -29,6 +29,7 @@
         <a href="/checkout2/{{$samp}}" class="btn btn-info btn-lg">
           <span class="glyphicon glyphicon-ok-sign"></span> Proceed to pay Deposit
         </a>
+		
       </div>
   </div></br></br>
         </div>

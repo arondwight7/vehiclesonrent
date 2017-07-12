@@ -46,7 +46,7 @@
                             </tr>@endforeach
                            
                         </table>
-                
+						<h3> refundable amount {{($v->deposit)-($v->bprice+($v->excessph*$v->excessh))}}</h3>
             </div>
         </section>
        </div>

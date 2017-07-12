@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use \Stripe\stripe;
 use App\sedan;
 use App\Order;
+use App\customer;
 use Auth;
 use App\Vehicl;
 use App\vehicle;
@@ -88,7 +89,7 @@ class sedanController extends Controller
     try{ $total = 25000;
       $charge = Charge::create(array(
       "amount" => 25000 * 100,
-      "source" => "tok_1APkXpJKrtHUdksME4IBe0CJ", // obtained with Stripe.js
+      "source" => "tok_1AeffDJKrtHUdksMXey1C8yT", // obtained with Stripe.js
       "currency" => "usd",
       "description" => "Booking a sedan car"
     ));
@@ -105,8 +106,12 @@ class sedanController extends Controller
       return redirect('checkout2/'.$request->input('vregno').'/')->with('error', $e->getMessage());
     }
     Session::forget('vehicl');
-    return redirect('acknowledge')->with('success', 'Payment done Successfully');    
+	
+	//$email = Auth::user()->email;
+	//$cu = customer::where('email','==',$email)->first();
+    //return redirect('acknowledge',compact('cu'))->with('success', 'Payment done Successfully');    
+	return redirect()->route('acknowledge')->with('success', 'Successfully');
    }
 
    
-}
+}	

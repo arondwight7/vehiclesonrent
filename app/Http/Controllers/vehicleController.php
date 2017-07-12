@@ -40,7 +40,7 @@ class vehicleController extends Controller
 		else if(Input::get('vcat')=="SUV"){
 			suv::where('vehiclename','=',Input::get('vname'))->increment('availability');
 		}
-		else if(Input::get('vcat')=="With Gear"){
+		else if(Input::get('vcat')=="Gear"){
 			gear::where('vehiclename','=',Input::get('vname'))->increment('availability');
 		}
     	return view('/attachsuccess');

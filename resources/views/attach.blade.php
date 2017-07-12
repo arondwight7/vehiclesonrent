@@ -61,7 +61,7 @@
                                                 </div> 
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" name="vcc" id="name" placeholder="Displacement" required="required" maxlength="4"  pattern="[1-2]{1}[0-9]{3}"/>
+                                                        <input type="text" name="vcc" id="name" placeholder="Displacement" required="required" maxlength="4"  pattern="[0-2]{1}[0-9]{3}"/>
                                                     </div>
                                                 </div>
 												
@@ -83,8 +83,7 @@
                                                         <input list="vehiclescat" name="vcat" placeholder="Vehicle Category" required="required">
                                                           <datalist id="vehiclescat">
                                                             <option value="Two Wheelers">
-                                                                <option value="Mopeds">
-                                                                <option value="With Gear">
+                                                                <option value="Gear">
                                                             <option value="Four Wheelers">
                                                                 <option value="Hatchback">
                                                                 <option value="Sedan">

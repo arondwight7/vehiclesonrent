@@ -52,6 +52,7 @@ Route::post('/payment1', 'customerController1@insert');
 Route::post('/payment2', 'customerController2@insert');
 Route::post('/payment3', 'customerController3@insert');
 
+Route::get('/cancel/{id}','customerController@cancel');
 Route::get('/orders', 'PagesController@orders');
 
 Route::get('/terms', 'PagesController@terms');
@@ -61,6 +62,7 @@ Route::get('/feedback', 'PagesController@feedback');
 Route::get('/feedsuccess', 'PagesController@feedsuuccess');
 
 Route::get('/settlepayment2/{id}', 'settleController@settlepayment2');
+Route::get('/settlepayment1/{id}', 'settleController@settlepayment1');
 Route::get('/settlepayment', 'settleController@viewsettle'); 
 
 Route::get('/adminavail', 'availableController@suv');
@@ -69,6 +71,7 @@ Route::post('/feedsuccess', 'feedbackController@insert');
 
 Route::post('/calculatesettle','settleController@calculate');
 
+//Route::get('/settlepayment1', 'PagesController@settlepayment1');
 
 Route::get('/orders', [
 	'uses' => 'sedanController@getProfile',

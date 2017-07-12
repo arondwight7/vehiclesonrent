@@ -34,26 +34,7 @@ function cal()
                 </div>
                     <div class="wrap-container">
                 <div class="crumbs">
-                <table class="table table-hover" >
-                    <tr>
-                        <th>Name</th>
-                        <th>Driving License Number</th>
-						<th>Vehicle Taken</th>
-                        <th>Extra hours driven</th>
                         
-                        <th></th>
-                    </tr>
-                    @foreach($fd as $value)
-                    <tr>
-                        <td>{{$value->name}} </td>
-						<td>{{$value->dl}}</td>
-                        <!--<td>{{$value->vehicletaken}} </td>-->
-                        <td>{{$value->excessh}} </td>
-                        
-                        <td><a href="/finalacknowledgement/{{ $value->id }}"><span class="btn btn-primary">generate</span></a></td>
-                    </tr>
-                    @endforeach
-                </table>        
     <div class="row">
         <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
                   
@@ -95,8 +76,9 @@ function cal()
                                                     
                                                         <label for="name">Extra Charges</label>
                                                         <input type="text" name="excessph" value= "{{ $settle1->excessph}}" id="excessph" class="form-control" required="required">
-                                                    
+														<input type="hidden" name="id" value= "{{$id}}">
                                                 </div> 
+												
                                         </div>
                                         <div class="col-xs-12">
 
@@ -113,9 +95,9 @@ function cal()
                                                         <input type="text" name="excessh" id="excessh" col-xs-12class="form-control" required="required">
                                                 </div> 
                                         </div>@endif
-                                        <!--<div class="price pull-left">
+                                        <div class="price pull-left">
                                             <button type="submit" class="btn btn-success" >Calculate</button>  
-                                        </div>-->
+                                        </div>
 
                                         
     

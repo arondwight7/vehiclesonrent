@@ -11,7 +11,8 @@
 			</div>
 		</div>
 	@endif
-	<center><h3>Great! Sit & Relax, we are on our way</h3><hr></center>
+	<center><h3>Great! We have recieved money worth <strong>{{$d}} </strong></br>Now Sit & Relax, we are on our way</br> Your dream drive <strong> {{$vt}}</strong> will be at your doorstep </br><strong>{{$cu}} </strong></br> at <strong>{{$pt}}</strong> on <strong>{{$p}}</strong>.</h3><hr>
+	</center>
 	 <section class="content-box box-2">
                     <div class="zerogrid">
                         <div class="row wrap-box"><!--Start Box-->

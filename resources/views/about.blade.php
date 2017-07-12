@@ -10,8 +10,8 @@
                 <div class="crumbs">
                     <ul>
                         <li><h1  style="margin: 40px 0;color: #212121;letter-spacing: 2px;font-weight: 500;">About us</h1></li>
-                        <p>From planning a trip outside the city to moving around inside one, a new era of freedom is here with VehiclesOnRent – India’s premier self-drive car rental. So, for your next trip to sunny beaches, or to the mall for shopping or movies, hire a car from VehiclesOnRent anytime you want it. 
-							VehiclesOnRent provides you with the wheels to drive around at a short notice, while also offering a range of luxury car hire options to choose from. 
+                        <p>From planning a trip outside the city to moving around inside one, a new era of freedom is here with VehiclesOnRent – India’s premier self-drive </br>car rental. So, for your next trip to sunny beaches, or to the mall for shopping or movies, hire a car from VehiclesOnRent anytime you want it. 
+							VehiclesOnRent provides you with the wheels to drive around at a short notice, while also offering a range of luxury car hire options to choose </br>from. 
 							With all India permit for every car, you are set to drive out as far as you want to go!
 						</p>
 						<h1 class="t-center" style="margin: 40px 0;color: #212121;letter-spacing: 2px;font-weight: 500;">Find Us here!</h1>
@@ -22,11 +22,11 @@
 						 <div class="col-1-3">
                             <div class="wrap-col">
                                 <h3 style="margin: 20px 0">Contact Info</h3>
-                                <strong>100 Feet Ring Road, Banashankari Stage III, Dwaraka Nagar, Banashankari, Bengaluru, Karnataka 560085</strong>
-                                <p>Opposite Vasundara Krithika<br>
+                                <h4><strong>VehiclesOnRent Pvt Ltd, </br>100 Feet Ring Road, Banashankari Stage III,</br> Dwaraka Nagar, Banashankari,</br> Bengaluru, Karnataka 560085</strong></h4>
+                                <h5><p>Opposite Vasundara Krithika<br></h5>
                                     Hoskerehalli</p>
-                                   <p>+91 888 888 9090 <br>
-                                    +91 888 888 9191</p>
+                                   <h4><strong><p>+91 888 888 9090 <br>
+                                    +91 888 888 9191</p></strong></h4>
                                 <p>info@vehiclesonrent.com</p>
                             </div>
                         </div>

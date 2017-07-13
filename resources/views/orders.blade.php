@@ -40,7 +40,7 @@
 								
 								
 									@else 
-										<td><a href="cancel/{{$order->id}}">Cancel</a></td>
+										<td><a href="/cancel/{{$order->id}}">Cancel</a></td>
 									
 									@endif
 									

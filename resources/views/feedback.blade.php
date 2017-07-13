@@ -12,14 +12,14 @@
                                 <div class="row">
                                         <div class="col-xs-12">
                                                 <div class="form-group">
+                                                        <input type="hidden" name="name" value="{{Auth::user()->name}}" id="name" class="form-control" />
                                                         
-                                                        <input type="text"  name="name" class="form-control" required="required" pattern="[A-Za-z][A-Za-z\s]*">
                                                 </div> 
                                         </div>
                                         <div class="col-xs-12">
                                                 <div class="form-group">
+                                                        <input type="hidden" name="email" value="{{Auth::user()->email}}" id="email" class="form-control" />
                                                         
-                                                        <input type="email" name="email"  class="form-control" required="required" >
                                                 </div> 
                                         </div>
                                         <div class="col-xs-12">

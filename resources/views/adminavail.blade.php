@@ -1,4 +1,4 @@
-@extends('layouts.def')
+@extends('layouts.deff')
 
 @section('content')
 <div class="container">
@@ -12,11 +12,7 @@
                         <li><h1  style="margin: 40px 0;color: #212121;letter-spacing: 2px;font-weight: 500;">Quick Availability</h1></li>
                         <div class="crumbs">
 
-                    <ul>
-                        <li><a href="{{ url('/admin') }}">Admin Home</a></li>
-                        
-                        <li><a href="{{ url('/settlepayment') }}">Settle Payment</a></li>
-                    </ul>
+                   
                 </div>
                     </ul>
                 </div>

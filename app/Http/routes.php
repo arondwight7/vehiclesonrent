@@ -53,6 +53,7 @@ Route::post('/payment2', 'customerController2@insert');
 Route::post('/payment3', 'customerController3@insert');
 
 Route::get('/cancel/{id}','customerController@cancel');
+
 Route::get('/orders', 'PagesController@orders');
 
 Route::get('/terms', 'PagesController@terms');
@@ -66,6 +67,8 @@ Route::get('/settlepayment1/{id}', 'settleController@settlepayment1');
 Route::get('/settlepayment', 'settleController@viewsettle'); 
 
 Route::get('/adminavail', 'availableController@suv');
+Route::get('/adminorder', 'availableController@ordr');
+Route::get('/adminfeedback', 'availableController@feed');
 
 Route::post('/feedsuccess', 'feedbackController@insert');
 
@@ -126,6 +129,7 @@ Route::post('/acknowledge3', [
 
 
 Route::get('/admin', 'PagesController@admin');
+Route::get('/adminowntc', 'PagesController@adminowntc');
 Route::get('/attach', 'PagesController@attach');
 
 Route::get('/twowheelergear', [

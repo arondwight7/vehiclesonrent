@@ -62,6 +62,12 @@ public function twowheelergear()
 		
 		return view('admin');
 	}
+	
+	public function adminowntc()
+	{
+		
+		return view('adminowntc');
+	}
 
 	public function attach()
 	{

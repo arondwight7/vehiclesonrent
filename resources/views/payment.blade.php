@@ -8,7 +8,7 @@
         		<hr>
         		<h3>Just few important things : </h3>
         		<hr>
-        		<h4><span class="glyphicon glyphicon-ok-sign"></span>We have your Driving License Details details, it is secere so you don't have to worry about it.</h4>
+        		<h4><span class="glyphicon glyphicon-ok-sign"></span>We have your Driving License Details details, it is secure so you don't have to worry about it.</h4>
         		<hr>
         		<h4><span class="glyphicon glyphicon-ok-sign"></span>Please pledge your Original Driving License to our employee at the time of pick-up.</h4>
         		<hr>
@@ -20,6 +20,7 @@
         		<hr>
         		<h4><span class="glyphicon glyphicon-ok-sign"></span>Feel free to call our customer care service 24X7</h4>
         		
+				</br><a href="{{ url('/terms') }}" target="_blank"><span class="glyphicon glyphicon-ok-sign"></span>Read our complete Privacy Policy & Terms of Use</a>
                <!-- @can('attach')
                 <a href="{{ url('/admin') }}">Admin Panel</a>
             @endcan-->

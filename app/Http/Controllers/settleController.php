@@ -17,6 +17,10 @@ use App\Http\Requests;
 use App\User;
 class settleController extends Controller
 {
+	public function __construct()
+     {
+         $this->middleware('auth');
+     }
     public function viewsettle()
     {
     	$settle = new customer;

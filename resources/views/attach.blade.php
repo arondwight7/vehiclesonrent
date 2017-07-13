@@ -42,7 +42,7 @@
                                                 </div>
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
-                                                        <input type="text" name="vname" id="name" placeholder="Enter Vehicle name" required="required" pattern="[A-Za-z][A-Za-z\s]*"/>
+                                                        <input type="text" name="vname" id="name" placeholder="Enter Vehicle name" required="required" pattern="[A-Za-z][A-Za-z 0-9\s]*"/>
                                                     </div>
                                                 </div>
                                                 

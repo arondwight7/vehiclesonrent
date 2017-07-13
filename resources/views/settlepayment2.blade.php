@@ -44,19 +44,19 @@ function cal()
                                         <div class="col-xs-12">
                                                 <div class="form-group">
                                                         <label for="name">Name</label>
-                                                        <input type="text" name="name" value= "{{ $settle1->name}}" id="card-name" name="name" class="form-control" required="required" >
+                                                        <input type="text" name="name" value= "{{ $settle1->name}}" id="card-name" name="name" class="form-control" required="required" readonly>
                                                 </div> 
                                         </div>
                                         <div class="col-xs-12">
                                                 <div class="form-group">
                                                         
-                                                        <input type="hidden" name="dl" value= "{{ $settle1->dl}}" id="dl" name="dl" class="form-control" required="required" >
+                                                        <input type="hidden" name="dl" value= "{{ $settle1->dl}}" id="dl" name="dl" class="form-control" required="required"  readonly>
                                                 </div> 
                                         </div>
                                         <div class="col-xs-12">
                                                 <div class="form-group">
                                                         <label for="name">Vehicle Taken</label>
-                                                        <input type="text" name="vehicletaken" value= "{{ $settle1->vehicletaken}}" id="vehicletaken" class="form-control" required="required" >
+                                                        <input type="text" name="vehicletaken" value= "{{ $settle1->vehicletaken}}" id="vehicletaken" class="form-control" required="required" readonly>
                                                 </div> 
                                         </div>
                                         
@@ -65,7 +65,7 @@ function cal()
                                                 <div class="form-group">
                                                    
                                                         <label for="name">Basic Charges</label>
-                                                        <input type="text" name="bprice" id="bprice" value="{{ $settle1->bprice}}"class="form-control" required="required">
+                                                        <input type="text" name="bprice" id="bprice" value="{{ $settle1->bprice}}"class="form-control" required="required" readonly>
                                                   
                                                 </div> 
                                         </div>
@@ -75,7 +75,7 @@ function cal()
                                                 <div class="form-group">
                                                     
                                                         <label for="name">Extra Charges</label>
-                                                        <input type="text" name="excessph" value= "{{ $settle1->excessph}}" id="excessph" class="form-control" required="required">
+                                                        <input type="text" name="excessph" value= "{{ $settle1->excessph}}" id="excessph" class="form-control" required="required" readonly>
 														<input type="hidden" name="id" value= "{{$id}}">
                                                 </div> 
 												

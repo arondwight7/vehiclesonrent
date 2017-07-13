@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Input;
 
 class feedbackController extends Controller
 {
+	public function __construct()
+     {
+         $this->middleware('auth');
+     }
     public function insert(Request $request)
     {
     	$ins = new feedback;

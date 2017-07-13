@@ -64,7 +64,7 @@
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
 													<label>Selected Vehicle</label>
-                                                        <input type="text" value="{{$sedan['item']['vehiclename']}}" name="vehicletaken" id="vehicletaken"  required="required" />
+                                                        <input type="text" value="{{$sedan['item']['vehiclename']}}" name="vehicletaken" id="vehicletaken"  required="required" readonly />
                                                     </div>
                                                 </div>
                                                 
@@ -88,13 +88,13 @@
                                                 <div class="col-1-2">
                                                     <div class="wrap-col">
                                                         <label>Driving License Exp Date</label>
-                                                        <input type="date" name="exp" id="exp"  required="required" min="2017-06-10" max="2030-05-31" />
+                                                        <input type="date" name="exp" id="exp"  required="required" min="2017-07-10" max="2030-05-31" />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">
                                                     <label>Pick up Date</label>
                                                     <div class="wrap-col">
-                                                        <input type="date" name="pick" id="pick" required="required" min="2017-05-30" max="2017-05-31" />
+                                                        <input type="date" name="pick" id="pick" required="required" min="2017-06-14" max="2017-06-15" />
                                                     </div>
                                                 </div>
                                                 <div class="col-1-2">

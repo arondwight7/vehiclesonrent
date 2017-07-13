@@ -44,7 +44,7 @@ class customerController extends Controller
 	{
 		order::where('id','=',$id)->update(['cancel'=>'cancelled']);
 		$orders = order::where('id','=',$id)->get();
-	
+		dd($orders);
 		return view('/orders',compact('orders'))->with('success', 'Successfully cancelled');
 	}
       

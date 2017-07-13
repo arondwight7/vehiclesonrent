@@ -12,16 +12,21 @@
                         <li><h1  style="margin: 40px 0;color: #212121;letter-spacing: 2px;font-weight: 500;">Welcome Admin</h1></li>
                         <div class="crumbs">
                     <ul>
-                        <li><a href="{{ url('/admin') }}">Admin Home</a></li>
+                        
                         
                         <li><a href="{{ url('/settlepayment') }}">Settle Payment</a></li>
-                        <li><a href="{{ url('/adminavail') }}">Available Cars</a></li>
+                        <li><a href="{{ url('/adminavail') }}">Available Vehicles</a></li>
+						<li><a href="{{ url('/adminorder') }}">Ordered Vehicles</a></li>
+						<li><a href="{{ url('/adminfeedback') }}">Feedback</a></li>
                     </ul>
                 </div>
+				<hr>
 				<div class="col-2-3">
                             <div class="wrap-col">
                                 <div class="contact">
-                                    <h3 style="margin: 20px 0 20px 30px">Owner Registration Form</h3>
+									<h4><a href="{{ url('/adminowntc') }}" target="_blank">Owner terms & conditions</a></h4>
+                                    <h3 style="margin: 20px 0 20px 30px">Owner Registration Form </h3>
+									
                                     <div id="contact_form">
                                         <form name="form1" id="ff" method="post" action="/attach">
                                             {{ csrf_field() }}

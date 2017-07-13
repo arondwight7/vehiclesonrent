@@ -19,12 +19,13 @@
         		<h4><span class="glyphicon glyphicon-ok-sign"></span>This includes a insurance of Bumper-to-Bumper.</h4>
         		<hr>
         		<h4><span class="glyphicon glyphicon-ok-sign"></span>Feel free to call our customer care service 24X7</h4>
-        		<div class="clearfix">
+						</br><a href="{{ url('/terms') }}" target="_blank"><span class="glyphicon glyphicon-ok-sign"></span>Read our complete Privacy Policy & Terms of Use</a>
+			<div class="clearfix">
           <div class="price pull-right">
 		  
         <a href="/checkout4/{{$samp}}" class="btn btn-info btn-lg">
           <span class="glyphicon glyphicon-ok-sign"></span> Proceed to pay Deposit
-        </a><h3> {{$cu}}  </h3>  
+        </a> 
       </div>
   </div></br></br>
         </div>
